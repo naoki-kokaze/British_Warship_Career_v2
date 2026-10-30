@@ -1,0 +1,329 @@
+ship,field,begin,end,begin_precision,end_precision,uncertain,place,qualifier,amount_gbp,cost_kind,rules,status
+AIF_9002,ORDERED,1859-10-06,1859-10-06,day,day,False,,,,,D1 H1,parsed
+AIF_9002,KEEL_LAID,1859-10-12,1859-10-12,day,day,False,,,,,D1 H1,parsed
+AIF_9002,LAUNCHED,1861-02-27,1861-02-27,day,day,False,,,,,D1 H1,parsed
+AIF_9002,COMPLETED,1862-09-12,1862-09-12,day,day,False,,,,,D1 H1 S1,parsed
+AIF_9002,FIRST_COST,,,,,False,,,377954.0,TOTAL,C1 C2,parsed
+AIF_9005,ORDERED,1861-01-12,1861-01-12,day,day,False,,,,,D1 H1,parsed
+AIF_9005,KEEL_LAID,1861-02-01,1861-02-01,day,day,False,,,,,D1 H1,parsed
+AIF_9005,LAUNCHED,1863-10-14,1863-10-14,day,day,False,,,,,D1 H1,parsed
+AIF_9005,COMPLETED,1868-09-15,1868-09-15,day,day,False,,,,,D1 H1,parsed
+AIF_9005,FIRST_COST,,,,,False,,,325000.0,TOTAL,C1 C2,parsed
+AIF_9006,ORDERED,1861-01-25,1861-01-25,day,day,False,,,,,D1 H1,parsed
+AIF_9006,KEEL_LAID,1861-03-08,1861-03-08,day,day,False,,,,,D1 H1,parsed
+AIF_9006,LAUNCHED,1862-09-26,1862-09-26,day,day,False,,,,,D1 H1,parsed
+AIF_9006,COMPLETED,1864-02-22,1864-02-22,day,day,False,,,,,D1 H1,parsed
+AIF_9006,FIRST_COST,,,,,False,,,294000.0,TOTAL,C1 C2,parsed
+AIF_9007,ORDERED,1860-10-24,1860-10-24,day,day,False,,alternative date: 10.4.1861,,,A1 D1 H1,ambiguous
+AIF_9007,KEEL_LAID,1861-08-01,1861-08-01,day,day,False,,,,,D1 H1,parsed
+AIF_9007,LAUNCHED,1863-12-23,1863-12-23,day,day,False,,,,,D1 H1,parsed
+AIF_9007,COMPLETED,1864-11-26,1864-11-26,day,day,False,,,,,D1 H1,parsed
+AIF_9007,FIRST_COST,,,,,False,,,469572.0,TOTAL,C1 C2,parsed
+AIF_9008,ORDERED,1861-09-02,1861-09-02,day,day,False,,,,,D1 H1,parsed
+AIF_9008,KEEL_LAID,1861-09-12,1861-09-12,day,day,False,,,,,D1 H1,parsed
+AIF_9008,LAUNCHED,1863-12-12,1863-12-12,day,day,False,,,,,D1 H1,parsed
+AIF_9008,COMPLETED,1867-06-01,1867-06-01,day,day,False,,,,,D1 H1,parsed
+AIF_9008,FIRST_COST,,,,,False,,,478855.0,TOTAL,C1 C2,parsed
+AIF_9009,ORDERED,1861-09-02,1861-09-02,day,day,False,,,,,D1 H1,parsed
+AIF_9009,KEEL_LAID,1861-10-30,1861-10-30,day,day,False,,,,,D1 H1,parsed
+AIF_9009,LAUNCHED,1865-03-27,1865-03-27,day,day,False,,,,,D1 H1,parsed
+AIF_9009,COMPLETED,1868-12-19,1868-12-19,day,day,False,,,,,D1 H1,parsed
+AIF_9009,COMPLETED,,,,,False,,,,,H1 H2 N1 S1,unparsed
+AIF_9009,FIRST_COST,,,,,False,,,483003.0,TOTAL,C1 C2,parsed
+AWC_9003,ORDERED,1860-03-05,1860-03-05,day,day,False,,,,,D1 H1,parsed
+AWC_9003,KEEL_LAID,1860-08-23,1860-08-23,day,day,False,,,,,D1 H1 S1,parsed
+AWC_9003,LAUNCHED,1863-03-19,1863-03-19,day,day,False,,,,,D1 H1,parsed
+AWC_9003,COMPLETED,1866-09-06,1866-09-06,day,day,False,,,,,D1 H1,parsed
+AWC_9003,FIRST_COST,,,,,False,,,298451.0,TOTAL,C1 C2 N1,parsed
+AWC_9004,ORDERED,1860-03-05,1860-03-05,day,day,False,,,,,D1 H1,parsed
+AWC_9004,KEEL_LAID,1860-10-01,1860-10-01,day,day,False,,,,,D1 H1 S1,parsed
+AWC_9004,LAUNCHED,1862-10-24,1862-10-24,day,day,False,,,,,D1 H1,parsed
+AWC_9004,COMPLETED,1865-07-06,1865-07-06,day,day,False,,,,,D1 H1,parsed
+AWC_9004,FIRST_COST,,,,,False,,,312034.0,TOTAL,C1 C2,parsed
+AWC_9005,ORDERED,1859-04-08,1859-04-08,day,day,False,,,,,D1 H1,parsed
+AWC_9005,KEEL_LAID,1859-12-01,1859-12-01,day,day,False,,,,,D1 H1 S1,parsed
+AWC_9005,LAUNCHED,1864-10-15,1864-10-15,day,day,False,,,,,D1 H1,parsed
+AWC_9005,COMPLETED,1867-03-23,1867-03-23,day,day,False,,,,,D1 H1,parsed
+AWC_9005,FIRST_COST,,,,,False,,,282803.0,TOTAL,C1 C2,parsed
+AWC_9008,ORDERED,1859-04-08,1859-04-08,day,day,False,,,,,D1 H1 H2 N1,parsed
+AWC_9008,KEEL_LAID,1860-08-23,1860-08-23,day,day,False,,,,,D1 H1 N1 S1,parsed
+AWC_9008,LAUNCHED,1864-07-05,1864-07-05,day,day,False,,,,,D1 H1 N1,parsed
+AWC_9008,COMPLETED,1866-03-17,1866-03-17,day,day,False,,,,,D1 H1 N1,parsed
+AWC_9008,FIRST_COST,,,,,False,,,152374.0,TOTAL,C1 C2 N1,parsed
+AWC_9010,ORDERED,1857-04-01,1857-04-01,day,day,False,,,,,D1 H1 N1,parsed
+AWC_9010,KEEL_LAID,1859-04-29,1859-04-29,day,day,False,,,,,D1 H1 N1 S1,parsed
+AWC_9010,REORDERED,1866-10-09,1866-10-09,day,day,False,,,,,D1 H1 N1,parsed
+AWC_9010,LAUNCHED,1868-04-25,1868-04-25,day,day,False,,,,,D1 H1 N1,parsed
+AWC_9010,COMPLETED,,,,,False,,at Sheerness,,,H1 N1 Q2,unparsed
+AWC_9010,FIRST_COST,,,,,False,,,183640.0,TOTAL,C1 C2 N1,parsed
+PF_9005,ORDERED,1841-03-18,1841-03-18,day,day,False,,,,,D1 H1,parsed
+PF_9005,KEEL_LAID,1844-01,1844-01,month,month,False,,,,,D1 H1,parsed
+PF_9005,LAUNCHED,1845-07-17,1845-07-17,day,day,False,,,,,D1 H1,parsed
+PF_9005,COMPLETED,1847-07,1847-07,month,month,False,,,,,D1 H1,parsed
+PF_9005,FIRST_COST,,,,,False,,,26401.0,HULL,C1 C2,parsed
+PF_9005,FIRST_COST,,,,,False,,,25005.0,MACHINERY,C1 C2,parsed
+PF_9005,FIRST_COST,,,,,False,,,16024.0,FITTING,C1 C2,parsed
+PF_9005,FIRST_COST,,,,,False,,,9256.0,UNLABELLED,C1 C2,partial
+PF_9005,FIRST_COST,,,,,False,,,5828.0,UNLABELLED,C1 C2,partial
+PF_9017,ORDERED,1847-04-25,1847-04-25,day,day,False,,,,,D1 H1,parsed
+PF_9017,KEEL_LAID,1847-09,1847-09,month,month,False,,,,,D1 H1,parsed
+PF_9017,LAUNCHED,1849-03-07,1849-03-07,day,day,False,,,,,D1 H1,parsed
+PF_9017,COMPLETED,1853-02-20,1853-02-20,day,day,False,Devenport,"after engine fitted at East India Dock, then to Chatham",,,D1 H1 Q1 Q2,parsed
+PF_9017,FIRST_COST,,,,,False,,,71303.0,TOTAL,C1 C2,parsed
+PM_9024,ORDERED,1861,1861,year,year,False,,,,,D1 H1 N1,parsed
+PM_9024,KEEL_LAID,1861-02-08,1861-02-08,day,day,False,,,,,D1 H1 N1,parsed
+PM_9024,LAUNCHED,1862-08-02,1862-08-02,day,day,False,,,,,D1 H1 N1,parsed
+PM_9024,COMPLETED,1863-01,1863-01,month,month,False,,,,,D1 H1 N1,parsed
+PSL_9001,ORDERED,1837-09-18,1837-09-18,day,day,False,,,,,D1 H1 N1,parsed
+PSL_9001,KEEL_LAID,1838-01,1838-01,month,month,False,,,,,D1 H1 N1,parsed
+PSL_9001,LAUNCHED,1838-06-13,1838-06-13,day,day,False,,,,,D1 H1 N1,parsed
+PSL_9001,COMPLETED,1839-03-23,1839-03-23,day,day,False,"Woolwich, Deptford and Chatham",,,,D1 H1 N1 Q1,parsed
+PSL_9001,FIRST_COST,,,,,False,,,37239.0,TOTAL,C1 C2,parsed
+PSL_9001,FIRST_COST,,,,,False,,,13154.0,HULL,C1 C2,parsed
+PSL_9001,FIRST_COST,,,,,False,,,18289.0,MACHINERY,C1 C2,parsed
+PSL_9001,FIRST_COST,,,,,False,,,5796.0,FITTING,C1 C2,parsed
+PSL_9008,ORDERED,1839-02-25,1839-02-25,day,day,False,,,,,D1 H1,parsed
+PSL_9008,KEEL_LAID,1840-02,1840-02,month,month,False,,,,,D1 H1,parsed
+PSL_9008,LAUNCHED,1841-02-12,1841-02-12,day,day,False,,,,,D1 H1,parsed
+PSL_9008,COMPLETED,1842-09-16,1842-09-16,day,day,False,Chatham,after engines fitted at Limehouse,,,D1 H1 Q1 Q2,parsed
+PSL_9008,FIRST_COST,,,,,False,,,28593.0,TOTAL,C1 C2,parsed
+PSL_9008,FIRST_COST,,,,,False,,,13385.0,HULL,C1 C2,parsed
+PSL_9008,FIRST_COST,,,,,False,,,10700.0,MACHINERY,C1 C2,parsed
+PSL_9008,FIRST_COST,,,,,False,,,4061.0,FITTING,C1 C2,parsed
+PSL_9018,ORDERED,1841-03-18,1841-03-18,day,day,False,,,,,D1 H1 N1,parsed
+PSL_9018,KEEL_LAID,1841-08,1841-08,month,month,False,,,,,D1 H1 N1,parsed
+PSL_9018,LAUNCHED,1842-03-24,1842-03-24,day,day,False,,,,,D1 H1 N1,parsed
+PSL_9018,COMPLETED,1843-03-24,1843-03-24,day,day,False,Plymouth,,,,D1 H1 N1 Q1,parsed
+PSL_9018,FIRST_COST,,,,,False,,,40367.0,UNLABELLED,C1 C2,partial
+PSL_9018,FIRST_COST,,,,,False,,,18580.0,HULL,C1 C2,parsed
+PSL_9018,FIRST_COST,,,,,False,,,13094.0,MACHINERY,C1 C2,parsed
+PSL_9018,FIRST_COST,,,,,False,,,8693.0,FITTING,C1 C2,parsed
+PSL_9023,ORDERED,1841-03-18,1841-03-18,day,day,False,,,,,D1 H1 N1,parsed
+PSL_9023,KEEL_LAID,1844-02,1844-02,month,month,False,,,,,D1 H1 N1,parsed
+PSL_9023,LAUNCHED,1844-11-09,1844-11-09,day,day,False,,,,,D1 H1 N1,parsed
+PSL_9023,COMPLETED,1846-05-13,1846-05-13,day,day,False,Portsmouth {after engine fitted in East India,,,,D1 H1 N1 Q1,parsed
+PSL_9023,FIRST_COST,,,,,False,,,55002.0,HULL,C1 C2,parsed
+PSL_9023,FIRST_COST,,,,,False,,,20390.0,MACHINERY,C1 C2,parsed
+PSL_9023,FIRST_COST,,,,,False,,,13284.0,FITTING,C1 C2,parsed
+PSPV_9003,ORDERED,1821-12-26,1821-12-26,day,day,False,,,,,D1 H1,parsed
+PSPV_9003,KEEL_LAID,1823-02,1823-02,month,month,False,,,,,D1 H1,parsed
+PSPV_9003,LAUNCHED,1824-02-17,1824-02-17,day,day,False,,,,,D1 H1 H2,parsed
+PSPV_9003,COMPLETED,1824-06-10,1824-06-10,day,day,False,,,,,D1 H1 H2,parsed
+PSPV_9003,FIRST_COST,,,,,False,,,10427.0,UNLABELLED,C1 C2 C5,partial
+PSPV_9003,FIRST_COST,,,,,False,,,5500.0,MACHINERY,C1 C2 C5,parsed
+PSPV_9008,ORDERED,1824-05,1824-05,month,month,False,,,,,D1 H1,parsed
+PSPV_9008,KEEL_LAID,1825-02,1825-02,month,month,False,,,,,D1 H1,parsed
+PSPV_9008,LAUNCHED,1827-03-28,1827-03-28,day,day,False,,,,,D1 H1,parsed
+PSPV_9008,COMPLETED,0006-03,1827-12,month,month,False,,,,,D2 H1,parsed
+PSPV_9008,FIRST_COST,,,,,False,,,11354.0,FITTING,C1 C2,parsed
+PSPV_9008,FIRST_COST,,,,,False,,,7047.0,MACHINERY,C1 C2,parsed
+PSPV_9036,FIRST_COST,,,,,False,,,5660.0,TOTAL,C1 C2,parsed
+PSPV_9046,FIRST_COST,,,,,False,,,12136.0,TOTAL,C1 C2,parsed
+PSPV_9046,FIRST_COST,,,,,False,,,5214.0,HULL,C1 C2,parsed
+PSPV_9046,FIRST_COST,,,,,False,,,5800.0,MACHINERY,C1 C2,parsed
+SBS_9034,ORDERED,1808-09-05,1808-09-05,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9034,KEEL_LAID,1808-12,1808-12,month,month,False,,,,,D1 H1 N1,parsed
+SBS_9034,LAUNCHED,1809-06-29,1809-06-29,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9034,COMPLETED,1809-08-15,1809-12-09,day,day,False,Plymouth,,,,D2 H1 N1 Q1,parsed
+SBS_9034,FIRST_COST,,,,,False,,,5190.0,BUILD,C1 C2,parsed
+SBS_9034,FIRST_COST,,,,,False,,,6698.0,FITTING,C1 C2,parsed
+SBS_9095,ORDERED,1807-12-31,1807-12-31,day,day,False,,,,,D1 H1,parsed
+SBS_9095,KEEL_LAID,1808-03,1808-03,month,month,False,,,,,D1 H1,parsed
+SBS_9095,LAUNCHED,1808-07-13,1808-07-13,day,day,False,,,,,D1 H1,parsed
+SBS_9095,COMPLETED,1808-07-27,1808-09-07,day,day,False,Deptford,,,,D2 H1 Q1,parsed
+SBS_9095,FIRST_COST,,,,,False,,,3695.0,BUILD,C1 C2,parsed
+SBS_9095,FIRST_COST,,,,,False,,,3386.0,FITTING,C1 C2,parsed
+SBS_9111,ORDERED,1812-10-02,1812-10-02,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9111,KEEL_LAID,1814-05,1814-05,month,month,False,,,,,D1 H1 N1,parsed
+SBS_9111,LAUNCHED,1815-01-25,1815-01-25,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9111,COMPLETED,1815-04-03,1815-04-03,day,day,False,Bombay,,,,D1 H1 N1 Q1,parsed
+SBS_9111,FIRST_COST,,,,,False,,,3932.0,BUILD,C1 C2,parsed
+SBS_9111,FIRST_COST,,,,,False,,,1922.0,UNLABELLED,C1 C2,partial
+SBS_9112,ORDERED,1812-10-02,1812-10-02,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9112,KEEL_LAID,1815-03,1815-03,month,month,False,,,,,D1 H1 N1,parsed
+SBS_9112,LAUNCHED,1816-01-15,1816-01-15,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9112,COMPLETED,1816-01-19,1816-01-19,day,day,False,Bombay,,,,D1 H1 N1 Q1,parsed
+SBS_9112,FIRST_COST,,,,,False,,,3968.0,BUILD,C1 C2,parsed
+SBS_9112,FIRST_COST,,,,,False,,,2104.0,UNLABELLED,C1 C2,partial
+SBS_9113,ORDERED,1812-09-05,1812-09-05,day,day,False,,,,,D1 H1 N1,partial
+SBS_9113,KEEL_LAID,1813-03,1813-03,month,month,False,,,,,D1 H1 N1,parsed
+SBS_9113,LAUNCHED,1814-08-18,1814-08-18,day,day,False,,,,,D1 H1 N1 S1,parsed
+SBS_9113,COMPLETED,1815-01-03,1815-01-03,day,day,False,,Completed ... (in place of C:),,,F2 N1 D1,parsed
+SBS_9113,FIRST_COST,,,,,False,,,9734.0,TOTAL,C1 C2,parsed
+SBS_9117,LAUNCHED,1806-11-10,1806-11-10,day,day,False,,inside parentheses (e.g. original build before capture),,,D1 H1 N1,partial
+SBS_9193,ORDERED,1823-03-25,1823-03-25,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9193,KEEL_LAID,1823-05,1823-05,month,month,False,,,,,D1 H1 N1,parsed
+SBS_9193,LAUNCHED,1825-02-19,1825-02-19,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9193,COMPLETED,1827-07-28,1827-07-28,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9193,FIRST_COST,,,,,False,,,6381.0,BUILD,C1 C2 N1,parsed
+SBS_9193,FIRST_COST,,,,,False,,,3792.0,FITTING,C1 C2 N1,parsed
+SBS_9226,ORDERED,1834-03-03,1834-03-03,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9226,KEEL_LAID,1834-10,1834-10,month,month,False,,,,,D1 H1 N1,parsed
+SBS_9226,LAUNCHED,1836-06-14,1836-06-14,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9226,COMPLETED,1836-09-28,1836-09-28,day,day,False,,as 3-gun brig with 3 x 32pdrs,,,D1 H1 N1 Q2,parsed
+SBS_9226,FIRST_COST,,,,,False,,,6952.0,UNLABELLED,C1 C2,partial
+SBS_9226,FIRST_COST,,,,,False,,,9192.0,FITTING,C1 C2,parsed
+SBS_9292,ORDERED,1844-05-06,1844-05-06,day,day,False,,named 20.7.1844,,,D1 H1 N1 Q2,parsed
+SBS_9292,KEEL_LAID,,,,,False,,,,,H1 N1,empty
+SBS_9292,LAUNCHED,1846-06-10,1846-06-10,day,day,False,,,,,D1 H1 N1,parsed
+SBS_9292,COMPLETED,,,,,False,Sheerness,,,,H1 N1 Q1,unparsed
+SBS_9292,FIRST_COST,,,,,False,,,10127.0,BUILD,C1 C2 N1,parsed
+SBS_9292,FIRST_COST,,,,,False,,,5306.0,FITTING,C1 C2 N1,parsed
+SCGVG_9079,ORDERED,1854-10-06,1854-10-06,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9079,KEEL_LAID,1854-10-05,1854-10-05,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9079,LAUNCHED,1855-03-15,1855-03-15,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9079,COMPLETED,1855-04-03,1855-04-03,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9079,FIRST_COST,,,,,False,,,10497.0,TOTAL,C1 C2 N1,parsed
+SCGVG_9079,FIRST_COST,,,,,False,,,6334.0,HULL,C1 C2 N1,parsed
+SCGVG_9079,FIRST_COST,,,,,False,,,3450.0,MACHINERY,C1 C2 N1,parsed
+SCGVG_9095,ORDERED,1854-10-06,1854-10-06,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9095,KEEL_LAID,1855-01-19,1855-01-19,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9095,LAUNCHED,1855-04-07,1855-04-07,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9095,COMPLETED,1855-05-20,1855-05-20,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9095,FIRST_COST,,,,,False,,,9709.0,TOTAL,C1 C2,parsed
+SCGVG_9095,FIRST_COST,,,,,False,,,4264.0,HULL,C1 C2,parsed
+SCGVG_9095,FIRST_COST,,,,,False,,,3497.0,MACHINERY,C1 C2,parsed
+SCGVG_9121,ORDERED,1855-07-26,1855-07-26,day,day,False,,,,,D1 H1,parsed
+SCGVG_9121,KEEL_LAID,1855-11-14,1855-11-14,day,day,False,,,,,D1 H1,parsed
+SCGVG_9121,LAUNCHED,1856-02-09,1856-02-09,day,day,False,,,,,D1 H1,parsed
+SCGVG_9121,COMPLETED,1856-03-19,1856-03-19,day,day,False,,,,,D1 H1,parsed
+SCGVG_9121,FIRST_COST,,,,,False,,,10566.0,TOTAL,C1 C2 N1,parsed
+SCGVG_9121,FIRST_COST,,,,,False,,,4790.0,HULL,C1 C2 N1,parsed
+SCGVG_9121,FIRST_COST,,,,,False,,,3560.0,MACHINERY,C1 C2 N1,parsed
+SCGVG_9131,ORDERED,1855-07-26,1855-07-26,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9131,KEEL_LAID,1855-08-26,1855-08-26,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9131,LAUNCHED,1855-12-11,1855-12-11,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9131,COMPLETED,1856-02-22,1856-02-22,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9131,FIRST_COST,,,,,False,,,10363.0,TOTAL,C1 C2 N1,parsed
+SCGVG_9131,FIRST_COST,,,,,False,,,4851.0,HULL,C1 C2 N1,parsed
+SCGVG_9131,FIRST_COST,,,,,False,,,3283.0,MACHINERY,C1 C2 N1,parsed
+SCGVG_9181,ORDERED,1855-10-08,1855-10-08,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9181,KEEL_LAID,1855-12-08,1855-12-08,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9181,LAUNCHED,1856-04-21,1856-04-21,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9181,COMPLETED,,,,,False,,,,,H1 N1,empty
+SCGVG_9181,FIRST_COST,,,,,False,,,9275.0,TOTAL,C1 C2,parsed
+SCGVG_9181,FIRST_COST,,,,,False,,,5660.0,HULL,C1 C2,parsed
+SCGVG_9181,FIRST_COST,,,,,False,,,3327.0,MACHINERY,C1 C2,parsed
+SCGVG_9201,ORDERED,1855-11-21,1855-11-21,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9201,KEEL_LAID,1855-12,1855-12,month,month,False,,,,,D1 H1 N1,parsed
+SCGVG_9201,LAUNCHED,1856-05-07,1856-05-07,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9201,COMPLETED,,,,,False,,,,,H1 N1,empty
+SCGVG_9201,FIRST_COST,,,,,False,,,5153.0,HULL,C1 C2 N1,parsed
+SCGVG_9201,FIRST_COST,,,,,False,,,1290.0,MACHINERY,C1 C2 N1,parsed
+SCGVG_9215,ORDERED,1855-12-31,1855-12-31,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9215,KEEL_LAID,1856-03-05,1856-03-05,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9215,LAUNCHED,1856-05-19,1856-05-19,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9215,COMPLETED,1857-01-26,1857-01-26,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9215,FIRST_COST,,,,,False,,,8204.0,TOTAL,C1 C2,parsed
+SCGVG_9215,FIRST_COST,,,,,False,,,4759.0,HULL,C1 C2,parsed
+SCGVG_9215,FIRST_COST,,,,,False,,,2374.0,MACHINERY,C1 C2,parsed
+SCGVG_9217,ORDERED,1855-12-31,1855-12-31,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9217,KEEL_LAID,1856-03-05,1856-03-05,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9217,LAUNCHED,1856-05-31,1856-05-31,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9217,COMPLETED,1857-01-26,1857-01-26,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9217,FIRST_COST,,,,,False,,,8373.0,TOTAL,C1 C2,parsed
+SCGVG_9217,FIRST_COST,,,,,False,,,4766.0,HULL,C1 C2,parsed
+SCGVG_9217,FIRST_COST,,,,,False,,,2374.0,MACHINERY,C1 C2,parsed
+SCGVG_9242,ORDERED,1859-10-19,1859-10-19,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9242,KEEL_LAID,1859-11-18,1859-11-18,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9242,LAUNCHED,1860-06-07,1860-06-07,day,day,False,,,,,D1 H1 N1,parsed
+SCGVG_9242,COMPLETED,,,,,False,Chatham,,,,H1 N1 Q1,unparsed
+SCS_9033,ORDERED,1819-09-03,1819-09-03,day,day,False,,,,,D1 H1,parsed
+SCS_9033,KEEL_LAID,1820-08,1820-08,month,month,False,,,,,D1 H1,parsed
+SCS_9033,LAUNCHED,1821-04-18,1821-04-18,day,day,False,,,,,D1 H1,parsed
+SCSL_9011,ORDERED,1846-03-26,1846-03-26,day,day,False,,,,,D1 H1,parsed
+SCSL_9011,KEEL_LAID,1847-10-18,1847-10-18,day,day,False,,,,,D1 H1,parsed
+SCSL_9011,LAUNCHED,1849-03-27,1849-03-27,day,day,False,,,,,D1 H1,parsed
+SCSL_9011,COMPLETED,1850-03-09,1850-03-09,day,day,False,,,,,D1 H1,parsed
+SCSL_9011,FIRST_COST,,,,,False,,,41404.0,TOTAL,C1 C2,parsed
+SCSL_9011,FIRST_COST,,,,,False,,,20785.0,HULL,C1 C2,parsed
+SCSL_9032,ORDERED,1854-04-03,1854-04-03,day,day,False,,,,,D1 H1 N1 S1,parsed
+SCSL_9032,KEEL_LAID,1856-10-01,1856-10-01,day,day,False,,,,,D1 H1 N1,parsed
+SCSL_9032,LAUNCHED,1857-11-04,1857-11-04,day,day,False,,,,,D1 H1 N1,parsed
+SCSL_9032,COMPLETED,1858-07-22,1858-07-22,day,day,False,,,,,D1 H1 N1,parsed
+SCSL_9032,FIRST_COST,,,,,False,,,31167.0,UNLABELLED,C1 C2 N1,partial
+SCSL_9032,FIRST_COST,,,,,False,,,17082.0,HULL,C1 C2 N1,parsed
+SCSL_9032,FIRST_COST,,,,,False,,,9142.0,MACHINERY,C1 C2 N1,parsed
+SCSL_9032,FIRST_COST,,,,,False,,,4943.0,FITTING,C1 C2 N1,parsed
+SCSL_9055,ORDERED,1858-03-27,1858-03-27,day,day,False,,,,,D1 H1 N1,parsed
+SCSL_9055,KEEL_LAID,1859-08-18,1859-08-18,day,day,False,,,,,D1 H1 N1,parsed
+SCSL_9055,LAUNCHED,1860-11-29,1860-11-29,day,day,False,,,,,D1 H1 N1,parsed
+SCSL_9055,COMPLETED,1862-06,1862-06,month,month,False,,,,,D1 H1 N1,parsed
+SF5_9028,ORDERED,1801-05-06,1801-05-06,day,day,False,,,,,D1 H1,parsed
+SF5_9028,KEEL_LAID,1801-07,1801-07,month,month,False,,,,,D1 H1,parsed
+SF5_9028,LAUNCHED,1803-07-05,1803-07-05,day,day,False,,,,,D1 H1,parsed
+SF5_9028,COMPLETED,1803-07-07,1803-08-20,day,day,False,Portsmouth,,,,D2 H1 Q1,parsed
+SF5_9028,ORDERED,1801-07-09,1801-07-09,day,day,False,,,,,D1 H1 S1,parsed
+SF5_9028,KEEL_LAID,1806-02,1806-02,month,month,False,,,,,D1 H1,parsed
+SF5_9028,LAUNCHED,1808-04-26,1808-04-26,day,day,False,,,,,D1 H1,parsed
+SF5_9028,COMPLETED,1808-06-24,1808-06-24,day,day,False,,,,,D1 H1,parsed
+SF5_9028,FIRST_COST,,,,,False,,,26150.0,TOTAL,C1 C2,parsed
+SF5_9041,ORDERED,1803-03-17,1803-03-17,day,day,False,,,,,D1 H1 N1,parsed
+SF5_9041,KEEL_LAID,1804-07,1804-07,month,month,False,,,,,D1 H1 N1,partial
+SF5_9041,REORDERED,1809-06-02,1809-06-02,day,day,False,,,,,D1 H1 N1,parsed
+SF5_9041,LAUNCHED,1813-08-28,1813-08-28,day,day,False,,,,,D1 H1 N1,parsed
+SF5_9041,COMPLETED,1813-09-11,1813-09-20,day,day,False,Plymouth,for Ordinary,,,D2 H1 N1 Q1 Q3 Q5,parsed
+SF5_9041,FIRST_COST,,,,,False,,,18000.0,BUILD,C1 C2 N1,parsed
+SF5_9041,FIRST_COST,,,,,False,,,6508.0,FITTING,C1 C2 N1,parsed
+SF5_9079,LAUNCHED,1782-07-31,1782-07-31,day,day,False,,inside parentheses (e.g. original build before capture),,,D1 H1 N1,partial
+SF5_9124,ORDERED,1812-11-16,1812-11-16,day,day,False,,,,,D1 H1 N1,parsed
+SF5_9124,KEEL_LAID,1813-02,1813-02,month,month,False,,,,,D1 H1 N1,parsed
+SF5_9124,LAUNCHED,1813-11-10,1813-11-10,day,day,False,,,,,D1 H1 N1 S1,parsed
+SF5_9166,ORDERED,1821-05-15,1821-05-15,day,day,False,,,,,D1 H1 N1,parsed
+SF5_9166,KEEL_LAID,1825-07,1825-07,month,month,False,,,,,D1 H1 N1,parsed
+SF5_9166,LAUNCHED,1828-10-09,1828-10-09,day,day,False,,,,,D1 H1 N1,parsed
+SF5_9166,COMPLETED,1829-04,1829-04,month,month,False,Plymouth,"for Ordinary, housed over fore and aft",,,D1 H1 N1 Q1 Q2,parsed
+SF5_9166,FIRST_COST,,,,,False,,,30433.0,TOTAL,C1 C2,parsed
+SL2_9043,ORDERED,1839-03-18,1839-03-18,day,day,False,,,,,D1 H1 N1,parsed
+SL2_9043,KEEL_LAID,1840-08,1840-08,month,month,False,,,,,D1 H1 N1,parsed
+SL2_9043,LAUNCHED,1848-04-04,1848-04-04,day,day,False,,,,,D1 H1 N1,parsed
+SL2_9043,COMPLETED,1848-04-19,1848-04-19,day,day,False,,for Ordinary,,,D1 H1 N1 Q2,parsed
+SL2_9043,FIRST_COST,,,,,False,,,80472.0,TOTAL,C1 C2,parsed
+SL2_9108,ORDERED,1860-03-05,1860-03-05,day,day,False,,,,,D1 H1,parsed
+SL2_9108,KEEL_LAID,1860-06-13,1860-06-13,day,day,False,,,,,D1 H1 S1,parsed
+SL3_9001,ORDERED,1757-05-21,1757-05-21,day,day,False,,,,,D1 H1,parsed
+SL3_9001,KEEL_LAID,1758-02-01,1758-02-01,day,day,False,,,,,D1 H1,parsed
+SL3_9001,LAUNCHED,1759-08-10,1759-08-10,day,day,False,,,,,D1 H1,parsed
+SL3_9001,COMPLETED,1759-10-09,1759-10-09,day,day,False,,,,,D1 H1,parsed
+SL3_9001,FIRST_COST,,,,,False,,,42589.2917,TOTAL,C1 C2,parsed
+SL3_9081,ORDERED,1806-10-20,1806-10-20,day,day,False,,,,,D1 H1,parsed
+SL3_9081,KEEL_LAID,1807-02,1807-02,month,month,False,,,,,D1 H1,parsed
+SL3_9081,LAUNCHED,1810-03-22,1810-03-22,day,day,False,,,,,D1 H1,parsed
+SL3_9081,COMPLETED,1810-03-23,1810-09-27,day,day,False,Plymouth,,,,D2 H1 Q1,parsed
+SL3_9081,FIRST_COST,,,,,False,,,56890.0,BUILD,C1 C2,parsed
+SL3_9081,FIRST_COST,,,,,False,,,33174.0,FITTING,C1 C2,parsed
+SL3_9162,ORDERED,1834-03-03,1834-03-03,day,day,False,,,,,D1 H1 N1,parsed
+SL3_9162,KEEL_LAID,1826-01,1826-01,month,month,False,,to previous design as 80 gun,,,D1 H1 N1 Q2,parsed
+SL3_9162,LAUNCHED,1844-04-03,1844-04-03,day,day,False,,,,,D1 H1 N1,parsed
+SL3_9162,COMPLETED,1848-09-26,1848-09-26,day,day,False,Sheerness,for Ordinary,,,D1 H1 N1 Q1 Q2 S1,parsed
+SL3_9162,FIRST_COST,,,,,False,,,56065.0,UNLABELLED,C1 C2 N1,partial
+SL3_9162,FIRST_COST,,,,,False,,,4231.0,FITTING,C1 C2 N1,parsed
+SL4_9004,ORDERED,,,,,False,,,,,H1,unparsed
+SL4_9004,KEEL_LAID,1777-03-01,1777-03-01,day,day,False,,,,,D1 H1,parsed
+SL4_9004,LAUNCHED,1780-07-01,1780-07-01,day,day,False,,,,,D1 H1,parsed
+SL4_9004,COMPLETED,1780-08-21,1780-08-21,day,day,False,,,,,D1 H1,parsed
+SL4_9004,FIRST_COST,,,,,False,,,26831.0625,FITTING,C1 C2,parsed
+SL4_9029,ORDERED,1781-12-27,1781-12-27,day,day,False,,,,,D1 H1 N1,parsed
+SL4_9029,KEEL_LAID,1782-08,1782-08,month,month,False,,,,,D1 H1 N1,parsed
+SL4_9029,LAUNCHED,1786-11-22,1786-11-22,day,day,False,,,,,D1 H1 N1,parsed
+SL4_9029,COMPLETED,1786-12-18,1787-02-05,day,day,False,,for Ordinary,,,D2 H1 N1 Q2 S2,parsed
+SL4_9029,COMPLETED,1790-06-12,1790-06-12,day,day,False,,for sea,,,D1 H1 N1 Q2 S2,parsed
+SL4_9029,FIRST_COST,,,,,False,,,29422.6417,BUILD,C1 C2,parsed
+SL4_9029,FIRST_COST,,,,,False,,,10126.625,UNLABELLED,C1 C2,partial
+SL4_9029,FIRST_COST,,,,,False,,,4935.0,UNLABELLED,C1 C2,partial
+SM_9008,ORDERED,1819-05-18,1819-05-18,day,day,False,,,,,D1 H1,parsed
+SM_9008,KEEL_LAID,1820-05,1820-05,month,month,False,,,,,D1 H1,parsed
+SM_9008,LAUNCHED,1823-06-25,1823-06-25,day,day,False,,,,,D1 H1,parsed
+SM_9008,COMPLETED,1823-07-19,1823-07-26,day,day,False,Plymouth,for Ordinary,,,D2 H1 Q1 Q2,parsed
+SM_9008,FIRST_COST,,,,,False,,,12754.0,BUILD,C1 C2,parsed
+SM_9008,FIRST_COST,,,,,False,,,1440.0,FITTING,C1 C2,parsed
+SM_9046,LAUNCHED,1814-05-21,1814-05-21,day,day,False,,,,,D1 H1,parsed
+SM_9052,KEEL_LAID,1832-11,1832-11,month,month,False,,,,,D1 H1,parsed
+SM_9052,LAUNCHED,1834-02-27,1834-02-27,day,day,False,,,,,D1 H1,parsed
+SM_9052,COMPLETED,1834-06-30,1834-06-30,day,day,False,,,,,D1 H1 S1,parsed
+SM_9052,FIRST_COST,,,,,False,,,3066.0,BUILD,C1 C2,parsed
+SM_9052,FIRST_COST,,,,,False,,,1046.0,FITTING,C1 C2,parsed
+SSL_9012,ORDERED,1805-11-19,1805-11-19,day,day,False,,,,,D1 H1,parsed
+SSL_9012,KEEL_LAID,1806-02,1806-02,month,month,False,,,,,D1 H1,parsed
+SSL_9012,LAUNCHED,1806-09-29,1806-09-29,day,day,False,,,,,D1 H1,parsed
+SSL_9012,COMPLETED,1806-10-25,1807-01-31,day,day,False,Chatham,,,,D2 H1 Q1,parsed

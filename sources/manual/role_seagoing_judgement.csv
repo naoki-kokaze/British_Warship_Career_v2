@@ -1,0 +1,119 @@
+role,mentions,ships,contexts,fitted_as_then,judgement (seagoing / harbour / either / not_a_role),note
+flagship,89,38,commissioned:32; fitted:5; other:52,paid_off:3; commission:2,seagoing,Claude提案・ユーザー承認 2026-10-07：在外ステーションの旗艦が大半。港の旗艦も就役中のため InNonCombatDuty にしない
+tender,42,24,commissioned:12; fitted:3; paid_off:2; other:25,commission:2; sold:1,harbour,
+guard ship,28,20,commissioned:7; fitted:12; other:9,commission:9; broken_up:2; sold:1,seagoing,
+receiving ship,18,15,commissioned:1; fitted:9; became:3; other:5,broken_up:4; sold:3; lent:1; ordinary:1,harbour,
+hospital,12,10,commissioned:1; fitted:7; became:1; sold:1; other:2,broken_up:2; commission:2; lent:1; sold:1; paid_off:1,harbour,
+lazarette,11,10,fitted:11,broken_up:8; lost:1; commission:1; sold:1,harbour,
+troopship,9,5,commissioned:3; fitted:4; other:2,commission:3; paid_off:1,seagoing,
+training ship,8,8,commissioned:2; fitted:2; became:1; lent:3,lent:2,harbour,
+storeship,6,3,commissioned:1; fitted:2; other:3,commission:2,seagoing,就役・航海する補給船（SL3_0144・SF5_0163・SF5_0137）。港の倉庫は storage hulk／depot。2026-10-07 harbour→seagoing に変更
+coal depot,5,5,fitted:5,sold:2; broken_up:2; lost:1,harbour,
+packet,5,5,commissioned:3; fitted:2,commission:2,seagoing,Claude提案・ユーザー承認 2026-10-07
+tug,5,4,fitted:2; other:3,broken_up:1; sold:1,harbour,
+prison,4,4,fitted:3; other:1,broken_up:2; ordinary:1,harbour,
+accommodation,3,3,fitted:1; lent:2,broken_up:1,harbour,
+coastguard ship,3,3,commissioned:3,,seagoing,
+coastguard watch vessel,3,3,became:2; other:1,,seagoing,
+harbour vessel,3,3,became:3,,harbour,
+lighter,3,3,fitted:1; became:2,sold:1,harbour,
+watch vessel,3,3,became:2; transferred:1,,harbour,
+yard craft,3,3,fitted:1; became:2,broken_up:1,harbour,
+advanced ship,2,2,fitted:2,lent:1; commission:1,seagoing,
+boys' training ship,2,2,lent:1; other:1,,harbour,
+convict ship,2,2,fitted:1; hulked:1,broken_up:1,harbour,Claude提案・ユーザー承認 2026-10-07
+demonstration ship,2,2,fitted:2,commission:2,harbour,Claude提案・ユーザー承認 2026-10-07：2隻ともプリマスで予備役のまま（就役なし）。役割の中身は未確認（Winfield序論・Lavery等で要確認）
+hulk,2,2,sold:1; other:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+powder depot,2,2,fitted:2,broken_up:1; lent:1,harbour,Claude提案・ユーザー承認 2026-10-07
+survey ship,2,2,fitted:2,commission:2,seagoing,Claude提案・ユーザー承認 2026-10-07
+surveying vessel,2,1,fitted:2,broken_up:2,seagoing,Claude提案・ユーザー承認 2026-10-07
+tank vessel,2,2,became:2,,harbour,Claude提案・ユーザー承認 2026-10-07
+administration and hospital,1,1,lent:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+admiralty board yacht,1,1,other:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+admiralty tender,1,1,fitted:1,broken_up:1,harbour,Claude提案・ユーザー承認 2026-10-07
+base ship,1,1,other:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+breakwater,1,1,fitted:1,none:1,harbour,Claude提案・ユーザー承認 2026-10-07
+coal hulk,1,1,fitted:1,broken_up:1,harbour,Claude提案・ユーザー承認 2026-10-07
+coaling hulk,1,1,sold:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+coastal defence ship,1,1,transferred:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+convalescent ship,1,1,fitted:1,commission:1,harbour,Claude提案・ユーザー承認 2026-10-07
+convict hospital,1,1,fitted:1,broken_up:1,harbour,Claude提案・ユーザー承認 2026-10-07
+convict hulk,1,1,fitted:1,sold:1,harbour,Claude提案・ユーザー承認 2026-10-07
+destroyer depot,1,1,harbour_service:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+diving vessel,1,1,lent:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+dockyard lighter,1,1,became:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+drill ship,1,1,other:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+experimental ship,1,1,other:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+factory,1,1,fitted:1,broken_up:1,harbour,Claude提案・ユーザー承認 2026-10-07
+falmouth packet,1,1,commissioned:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+floating chapel,1,1,fitted:1,broken_up:1,harbour,Claude提案・ユーザー承認 2026-10-07
+floating workshop,1,1,became:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+gunnery ship,1,1,paid_off:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+gunnery training ship,1,1,fitted:1,commission:1,harbour,Claude提案・ユーザー承認 2026-10-07
+harbour flag and receiving ship,1,1,fitted:1,broken_up:1,harbour,Claude提案・ユーザー承認 2026-10-07
+harbour training ship,1,1,fitted:1,commission:1,harbour,Claude提案・ユーザー承認 2026-10-07
+mooring hulk,1,1,fitted:1,sold:1,harbour,Claude提案・ユーザー承認 2026-10-07
+mooring lighter,1,1,fitted:1,broken_up:1,harbour,Claude提案・ユーザー承認 2026-10-07
+mooring vessel,1,1,fitted:1,sold:1,harbour,Claude提案・ユーザー承認 2026-10-07
+naval cadet training ship,1,1,commissioned:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+nelson's flagship,1,1,other:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+parker's flagship,1,1,commissioned:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+po vessel,1,1,commissioned:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+powder hulk,1,1,fitted:1,broken_up:1,harbour,Claude提案・ユーザー承認 2026-10-07
+powder ship,1,1,fitted:1,broken_up:1,harbour,Claude提案・ユーザー承認 2026-10-07
+provision depot,1,1,fitted:1,commission:1,harbour,Claude提案・ユーザー承認 2026-10-07：港での補給拠点として艤装後、再就役で航海（SC6_0070、飢饉救援輸送）。地位の移行は再就役の出来事で表す
+receiving and depot,1,1,fitted:1,commission:1,harbour,Claude提案・ユーザー承認 2026-10-07
+relief steamer for dover packet,1,1,other:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+revenue vessel,1,1,lent:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+rnr drill ship,1,1,fitted:1,lent:1,harbour,Claude提案・ユーザー承認 2026-10-07
+rnvr training ship,1,1,other:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+royal yacht,1,1,commissioned:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+schooner,1,1,other:1,,not_a_role,Claude提案・ユーザー承認 2026-10-07：帆装の型（Rerigged as a schooner）
+screw frigate blockship,1,1,fitted:1,commission:1,seagoing,Claude提案・ユーザー承認 2026-10-07
+screw guard ship,1,1,fitted:1,commission:1,seagoing,Claude提案・ユーザー承認 2026-10-07
+screw mortar ship,1,1,fitted:1,paid_off:1,seagoing,Claude提案・ユーザー承認 2026-10-07
+seagoing training ship,1,1,commissioned:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+seamen's hospital,1,1,hulked:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+sheer hulk,1,1,other:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+ship,1,1,other:1,,not_a_role,Claude提案・ユーザー承認 2026-10-07：帆装の型（rigged as a ship sloop）
+steam dredger,1,1,became:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+storage hulk,1,1,sold:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+superintendent's yacht,1,1,other:1,,harbour,Claude提案・ユーザー承認 2026-10-07
+survey vessel,1,1,other:1,,seagoing,Claude提案・ユーザー承認 2026-10-07
+torpedo instruction ship,1,1,fitted:1,commission:1,harbour,Claude提案・ユーザー承認 2026-10-07
+training vessel,1,1,fitted:1,commission:1,harbour,Claude提案・ユーザー承認 2026-10-07：港で訓練艦として艤装後、1877年に seagoing training ship として再就役（SC6_0084）
+victualling depot,1,1,fitted:1,paid_off:1,harbour,Claude提案・ユーザー承認 2026-10-07
+victualling ship,1,1,fitted:1,sold:1,harbour,Claude提案・ユーザー承認 2026-10-07：名前は ship だが艤装後に売却、港での用途
+victualling vessel,1,1,fitted:1,broken_up:1,harbour,Claude提案・ユーザー承認 2026-10-07：工廠職員の宿舎を兼ねる、港での用途
+oil jetty,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（調査で漏れた役割、extract_events_v1.py の ROLE_FALLBACK で取り出し）
+lump,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（調査で漏れた役割、extract_events_v1.py の ROLE_FALLBACK で取り出し）
+pontoon,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（調査で漏れた役割、extract_events_v1.py の ROLE_FALLBACK で取り出し）
+coal pontoon,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（調査で漏れた役割、extract_events_v1.py の ROLE_FALLBACK で取り出し）
+gunboat,,,,,seagoing,Claude提案・ユーザー承認 2026-10-07（調査で漏れた役割、extract_events_v1.py の ROLE_FALLBACK で取り出し）
+screw mortar frigate,,,,,seagoing,Claude提案・ユーザー承認 2026-10-07（調査で漏れた役割、extract_events_v1.py の ROLE_FALLBACK で取り出し）
+victualler,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（調査で漏れた役割、extract_events_v1.py の ROLE_FALLBACK で取り出し）：艤装後、プリマス・シアネスの軍港に置かれ、就役の記述なし（SL3_0140 第11節）
+sloop,,,,,not_a_role,Claude提案・ユーザー承認 2026-10-07（調査で漏れた役割、extract_events_v1.py の ROLE_FALLBACK で取り出し）：艦種・帆装の区分（schooner・ship に合わせる）
+depot ship,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+coastguard depot ship,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）：coastguard depot ship は役割の文で移管ではないので決定Fの対象外
+cooking depot ship,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+water depot,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+quarantine service,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+gunnery tender,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+victualling yard tug,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+coal 'haulabout',,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+coaling jetty,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+jetty,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+dummy pier,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+torpedo lighter,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+barge,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+roman catholic chapel,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+engineers' training ship,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+school ship,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+torpedo training establishment,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+attached to royal naval college,,,,,harbour,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+transport,,,,,seagoing,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+troop transport,,,,,seagoing,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+coastal defence,,,,,seagoing,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+customs tender,,,,,seagoing,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+navy board yacht,,,,,seagoing,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）
+port admiral's flagship,,,,,seagoing,Claude提案・ユーザー承認 2026-10-07（LLM の候補で見つかった役割。既存の判断に揃える）

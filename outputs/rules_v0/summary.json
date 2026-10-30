@@ -1,0 +1,55 @@
+{
+  "ships": 269,
+  "ships_with_field": {
+    "ORDERED": 208,
+    "KEEL_LAID": 215,
+    "LAUNCHED": 242,
+    "COMPLETED": 197,
+    "REORDERED": 2,
+    "FIRST_COST": 158
+  },
+  "date_facts": 873,
+  "date_status": {
+    "parsed": 850,
+    "ambiguous": 3,
+    "empty": 10,
+    "partial": 9,
+    "unparsed": 1
+  },
+  "uncertain_dates": 1,
+  "cost_facts": 371,
+  "cost_kinds": {
+    "TOTAL": 63,
+    "HULL": 51,
+    "MACHINERY": 58,
+    "FITTING": 91,
+    "UNLABELLED": 50,
+    "BUILD": 52,
+    "": 2,
+    "SUPPLIES": 4
+  },
+  "rule_usage": {
+    "D1": 814,
+    "H1": 868,
+    "N1": 553,
+    "Q2": 69,
+    "C1": 369,
+    "C2": 355,
+    "A1": 3,
+    "S1": 40,
+    "Q1": 88,
+    "N4": 5,
+    "H2": 11,
+    "F1": 1,
+    "D2": 48,
+    "N3": 12,
+    "F2": 4,
+    "Q3": 20,
+    "C3": 2,
+    "D3": 1,
+    "S2": 14,
+    "Q4": 1,
+    "Q5": 1,
+    "C4": 12
+  }
+}

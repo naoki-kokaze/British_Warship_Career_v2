@@ -1,0 +1,4 @@
+﻿severity,shape,focus,message
+Violation,CompletionNotBeforeLaunch,myData:production_SF5_9028,PR2: completion (1803-08-20) is earlier than launch (1808-04-26); suspected error in the source (e.g. OCR)
+Warning,OrderNotAfterKeel,myData:production_SCGVG_9079,PR4: order (1854-10-06) is later than keel laying (1854-10-05)
+Warning,OrderNotAfterKeel,myData:production_SL3_9162,PR4: order (1834-03-03) is later than keel laying (1826-01-31)

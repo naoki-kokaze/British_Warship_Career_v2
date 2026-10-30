@@ -1,0 +1,104 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix : <http://www.example.com/ontology/warship#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix sealit: <http://www.sealitproject.eu/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix shapes: <http://www.example.com/ontology/warship/shapes-dimensions#> .
+
+# SHACL shapes for the dimensions (rules v0.1) of ontology v2 (draft.2, 2026-10-05)
+# Report: phd_thesis/jinmoncom2026/docs/jinmoncom2026_rules_v01_dimensions_report_20261005.md
+# Run with pySHACL or scripts/run_shapes_sparql.py (same sh:select queries with rdflib).
+
+shapes: a owl:Ontology ;
+    sh:declare [ sh:prefix "crm" ; sh:namespace "http://www.cidoc-crm.org/cidoc-crm/"^^xsd:anyURI ] ,
+               [ sh:prefix "sealit" ; sh:namespace "http://www.sealitproject.eu/ontology/"^^xsd:anyURI ] ,
+               [ sh:prefix "" ; sh:namespace "http://www.example.com/ontology/warship#"^^xsd:anyURI ] ,
+               [ sh:prefix "xsd" ; sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ] .
+
+# DM1: every measurement measures exactly one ship
+shapes:MeasurementOfOneShip a sh:NodeShape ;
+    sh:targetClass crm:E16_Measurement ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "DM1: crm:E16_Measurement must have exactly one crm:P39_measured to a sealit:Ship ({?n} found)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?n WHERE {
+                { SELECT $this (COUNT(?s) AS ?n) WHERE {
+                    $this a crm:E16_Measurement .
+                    OPTIONAL { $this crm:P39_measured ?s . ?s a sealit:Ship . }
+                  } GROUP BY $this }
+                FILTER (?n != 1)
+            }""" ;
+    ] .
+
+# DM2: a determined length has feet and inches, and inches are less than 12
+shapes:LengthComplete a sh:NodeShape ;
+    sh:targetClass crm:E54_Dimension ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "DM2: a length with status '{?st}' must have :value_feet and :value_inches (< 12)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?st WHERE {
+                $this crm:P91_has_unit ?u ; :value_status ?st .
+                FILTER (STRENDS(STR(?u), "unit_ft_in") && ?st != "needs_review")
+                OPTIONAL { $this :value_feet ?f }
+                OPTIONAL { $this :value_inches ?i }
+                FILTER (!BOUND(?f) || !BOUND(?i) || ?i >= 12 || ?i < 0)
+            }""" ;
+    ] .
+
+# DM3: the Builder's Measurement agrees with k x b x (b/2) / 94 within 0.5% (warning; values are not changed)
+shapes:BuildersMeasurementFormula a sh:NodeShape ;
+    sh:targetClass crm:E16_Measurement ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "DM3: tons bm ({?bm}) differs from k x b x (b/2) / 94 ({?calc}) by more than 0.5% (OCR error, approximate value, or a different tonnage rule)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?bm ?calc WHERE {
+                $this crm:P40_observed_dimension ?k , ?b , ?t .
+                ?k crm:P2_has_type :KeelLengthForTonnage ; :value_feet ?kf ; :value_inches ?ki .
+                ?b crm:P2_has_type :BreadthForTonnage ; :value_feet ?bf ; :value_inches ?bi .
+                ?t crm:P2_has_type :BuildersMeasurement ; :tons_bm_whole ?tw ; :tons_bm_ninety_fourths ?tn .
+                BIND (?kf + ?ki / 12 AS ?kv)
+                BIND (?bf + ?bi / 12 AS ?bv)
+                BIND (?kv * ?bv * ?bv / 188 AS ?calc)
+                BIND (?tw + ?tn / 94 AS ?bm)
+                FILTER (ABS(?calc - ?bm) / ?bm > 0.005)
+            }""" ;
+    ] .
+
+# DM4: a value chosen by the formula (rule F2) still awaits the check against the page image
+shapes:FormulaResolvedNotChecked a sh:NodeShape ;
+    sh:targetClass crm:E54_Dimension ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "DM4: value chosen by the formula (rule F2), not yet checked against the page image: {?src}" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?src WHERE {
+                $this :value_status "formula_resolved" ; :source_text ?src .
+            }""" ;
+    ] .
+
+# DM5: a value that the rules could not determine (only its readable part is recorded)
+shapes:NeedsReview a sh:NodeShape ;
+    sh:targetClass crm:E54_Dimension ;
+    sh:severity sh:Info ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "DM5: value not determined by the rules (needs review): {?src}" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?src WHERE {
+                $this :value_status "needs_review" ; :source_text ?src .
+            }""" ;
+    ] .

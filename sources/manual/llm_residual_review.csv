@@ -1,0 +1,118 @@
+key,ship,clause_no,runs,llm_kind,llm_role,llm_date_text,effect_by_table,verdict,kind,role,date_text,new_name,reason,decided
+ACD_0002|3|role|afcfcee1,ACD_0002,3,1+2,role,gunnery tender,1866-90,role_not_in_table,covered_by_rule,role,gunnery tender,1866-90,,【10/7 accept：港での任務（判断表）。1866〜1890】→ 規則で同じ出来事が取れるようになったため統合では使わない（(role) 1866 gunnery tender。3周目の規則または判断表の追加）,2026-10-08
+ACD_0002|5|in_ordinary|20cb7b5f,ACD_0002,5,1+2,in_ordinary,,8.1878,,reject,in_ordinary,,8.1878,,1866〜90年は就役しない砲術補給艦（#1）。1878年の艦隊への編入が予備役か就役か原文から決められない,2026-10-07
+AIF_0003|6|role|033a9c08,AIF_0003,6,1+2,role,coastguard depot ship,2.1874,role_not_in_table,covered_by_rule,role,coastguard depot ship,2.1874,,【10/7 accept：港での任務】→ 規則で同じ出来事が取れるようになったため統合では使わない（(role) 1874-02 coastguard depot ship。3周目の規則または判断表の追加）,2026-10-08
+AIF_0003|9|role|7d91752d,AIF_0003,9,1+2,role,coastguard depot ship,6.1880,role_not_in_table,covered_by_rule,role,coastguard depot ship,6.1880,,【10/7 accept：港での任務】→ 規則で同じ出来事が取れるようになったため統合では使わない（(role) 1880-06 coastguard depot ship。3周目の規則または判断表の追加）,2026-10-08
+PF_0002|15|repair|81552a0e,PF_0002,15,1,repair,,11.1858-6.1859,,covered_by_rule,repair,,11.1858-6.1859,,【10/7 accept：汽缶の載せ替え＝工廠での工事。run2 は見落とし】→ 規則で同じ出来事が取れるようになったため統合では使わない（sealit:ShipRepair 1858-11。3周目の規則または判断表の追加）,2026-10-08
+PF_0008|3|repair|98163ebb,PF_0008,3,1+2,repair,,1849-50,,covered_by_rule,repair,,1849-50,,【10/7 accept：機関の換装＝工廠での工事（修理に入れる）】→ 規則で同じ出来事が取れるようになったため統合では使わない（sealit:ShipRepair 1849。3周目の規則または判断表の追加）,2026-10-08
+PGV_0005|2|fitting|fa71033e,PGV_0005,2,1+2,fitting,,,,reject,fitting,,,,建造費の内訳の切れ端で艤装の出来事ではない（2回とも同じ誤り）,2026-10-07
+PM_0061|2|role|d923190f,PM_0061,2,1+2,role,victualling yard tug,1857,role_not_in_table,accept,role,victualling yard tug,1857,,糧食補給廠に付属＝港での任務。役割名の tug は原文になく LLM の補い,2026-10-07
+PM_0063|1|acquisition|82978b98,PM_0063,1,1+2,acquisition,,11 July 1860,,accept,acquisition,,11 July 1860,,見出しの続きの purchased 11 July 1860。規則は節の切れ目で取りこぼし。日付は年まで,2026-10-07
+PSPV_0005|4|repair|501cb23d,PSPV_0005,4,1+2,repair,,3 - 4.1831,,covered_by_rule,repair,,3 - 4.1831,,【10/7 accept：機関の換装＝工廠での工事（#6と同じ）】→ 規則で同じ出来事が取れるようになったため統合では使わない（sealit:ShipRepair 1831-03。3周目の規則または判断表の追加）,2026-10-08
+PSPV_0005|10|role|1fcad01f,PSPV_0005,10,1+2,role,transport,1.6.1840,role_not_in_table,covered_by_rule,role,transport,1.6.1840,,規則で取れるようになった（B4 (role) 1840-06-01 transport）：3周目の規則または判断表の追加（10/7）,2026-10-08
+PSPV_0015|15|role|6a1cde5b,PSPV_0015,15,1+2,role,transport,,role_not_in_table,covered_by_rule,role,transport,,,規則で取れるようになった（B4 (role)  transport）：3周目の規則または判断表の追加（10/7）,2026-10-08
+PSPV_0015|23|role|57ac3db4,PSPV_0015,23,1+2,role,transport,During 1870,role_not_in_table,covered_by_rule,role,transport,During 1870,,規則で取れるようになった（B4 (role) 1870 transport）：3周目の規則または判断表の追加（10/7）,2026-10-08
+PSPV_0044|11|role|c4c80295,PSPV_0044,11,1+2,role,transport,,role_not_in_table,,role,transport,,,,
+PSPV_0044|15|repair|67d9f560,PSPV_0044,15,1+2,repair,,1863,,covered_by_rule,repair,,1863,,規則で取れるようになった（D1 sealit:ShipRepair 1863）：3周目の規則または判断表の追加（10/7）,2026-10-08
+PSPV_0044|16|role|22d46f08,PSPV_0044,16,1+2,role,coal 'haulabout',1878,role_not_in_table,,role,coal 'haulabout',1878,,,
+PSPV_0044|16|role|46c61257,PSPV_0044,16,1+2,role,coal hulk,1884,service:InNonCombatDuty,,role,coal hulk,1884,,,
+PSPV_0052|2|conversion|dfb1e94b,PSPV_0052,2,1+2,conversion,,1836-37,,,conversion,,1836-37,,,
+SBS_0081|1|fitting|ff35a8d0,SBS_0081,1,1,fitting,,17.8.1809,,covered_by_rule,fitting,,17.8.1809,,規則3周目 F2（定型部分の Completed D を建造の完了日として取る）,2026-10-08
+SBS_0156|4|recommissioning|36496244,SBS_0156,4,1+2,recommissioning,,21.10.1827,,covered_by_rule,recommissioning,,21.10.1827,,規則で取れるようになった（D1 :Recommissioning 1827-10-21）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SBS_0198|4|decommissioning|fb39f8d5,SBS_0198,4,1+2,decommissioning,,1.9.1837,,,decommissioning,,1.9.1837,,,
+SBS_0233|1|fitting|9ff4ba37,SBS_0233,1,1+2,fitting,,,,,fitting,,,,,
+SBS_0233|2|fitting|4802d284,SBS_0233,2,1,fitting,,,,,fitting,,,,,
+SBS_0234|1|fitting|cb1e0c68,SBS_0234,1,1+2,fitting,,,,,fitting,,,,,
+SC6_0028|13|in_ordinary|41540b1c,SC6_0028,13,1,in_ordinary,,4.1807,,,in_ordinary,,4.1807,,,
+SC6_0036|12|decommissioning|d4b144c8,SC6_0036,12,1+2,decommissioning,,8.1819,,,decommissioning,,8.1819,,,
+SC6_0042|1|fitting|bbb8b27c,SC6_0042,1,1+2,fitting,,9.1814-6.12.1814,,,fitting,,9.1814-6.12.1814,,,
+SC6_0055|13|decommissioning|7e7267ce,SC6_0055,13,1+2,decommissioning,,9.1831,,,decommissioning,,9.1831,,,
+SC6_0055|20|role|4e966fa1,SC6_0055,20,1+2,role,depot ship,6.1841,role_not_in_table,covered_by_rule,role,depot ship,6.1841,,規則で取れるようになった（B4 (role) 1841-06 depot ship）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SC6_0068|4|role|30fd3adb,SC6_0068,4,1+2,role,depot ship,1832,role_not_in_table,covered_by_rule,role,depot ship,1832,,規則で取れるようになった（B4 (role) 1832 depot ship）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SC6_0093|16|role|8280c3e0,SC6_0093,16,1+2,role,tender,1.1.870,service:InNonCombatDuty,,role,tender,1.1.870,,,
+SC6_0103|8|decommissioning|32684999,SC6_0103,8,1+2,decommissioning,,8.6.1869,,,decommissioning,,8.6.1869,,,
+SCGVG_0004|3|conversion|34bd6227,SCGVG_0004,3,1+2,conversion,,1-6.1849,,covered_by_rule,conversion,,1-6.1849,,規則で取れるようになった（D1 sealit:ShipRepair 1849-01）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SCGVG_0020|2|recommissioning|e6056da2,SCGVG_0020,2,1+2,recommissioning,,16.7.1857,,,recommissioning,,16.7.1857,,,
+SCGVG_0114|6|role|149c351f,SCGVG_0114,6,1+2,role,cooking depot ship,30.6.1869,role_not_in_table,covered_by_rule,role,cooking depot ship,30.6.1869,,規則で取れるようになった（B4 (role) 1869-06-30 cooking depot ship）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SCGVG_0141|6|role|304d63c6,SCGVG_0141,6,1+2,role,coastal defence,1868,role_not_in_table,covered_by_rule,role,coastal defence,1868,,規則で取れるようになった（B4 (role) 1868 coastal defence）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SCSL_0004|1|conversion|d892a3a5,SCSL_0004,1,1+2,conversion,,,,,conversion,,,,,
+SCSL_0043|8|breaking_up|43114a83,SCSL_0043,8,1+2,breaking_up,,6.1875,,,breaking_up,,6.1875,,,
+SCS_0011|2|acquisition|47760267,SCS_0011,2,1,acquisition,,31.8.1813,,,acquisition,,31.8.1813,,,
+SCS_0040|4|role|d26ccb94,SCS_0040,4,1+2,role,customs tender,1831,role_not_in_table,covered_by_rule,role,customs tender,1831,,規則で取れるようになった（B4 (role) 1831 customs tender）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SCS_0040|5|conversion|d4597082,SCS_0040,5,1+2,conversion,,1838,,,conversion,,1838,,,
+SCS_0042|1|acquisition|2f6ea374,SCS_0042,1,1+2,acquisition,,20.3.1823,,,acquisition,,20.3.1823,,,
+SF5_0021|10|role_end|b3640f1b,SF5_0021,10,1+2,role_end,quarantine service,to 1850,role_not_in_table,covered_by_rule,role_end,quarantine service,to 1850,,規則で取れるようになった（B4 (role)  quarantine service）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SF5_0042|13|decommissioning|1b64dd98,SF5_0042,13,1,decommissioning,,9.1818,,,decommissioning,,9.1818,,,
+SF5_0042|22|role|30fd3adb,SF5_0042,22,1,role,depot ship,1832,role_not_in_table,covered_by_rule,role,depot ship,1832,,規則で取れるようになった（B4 (role) 1832 depot ship）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SF5_0059|6|repair|70c73738,SF5_0059,6,1+2,repair,,10.1828-1.1830,,,repair,,10.1828-1.1830,,,
+SF5_0069|12|conversion|756a7657,SF5_0069,12,1+2,conversion,,1 - 3.1863,,,conversion,,1 - 3.1863,,,
+SF5_0069|12|role|756a7657,SF5_0069,12,1+2,role,roman catholic chapel,1 - 3.1863,role_not_in_table,,role,roman catholic chapel,1 - 3.1863,,,
+SF5_0075|2|acquisition|9e06697b,SF5_0075,2,1+2,acquisition,,30.3.1795,,,acquisition,,30.3.1795,,,
+SF5_0075|8|fitting|dc3f0421,SF5_0075,8,1+2,fitting,,6.1805,,covered_by_rule,fitting,,6.1805,,規則で取れるようになった（D1 :Fitting 1805-06）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SF5_0075|9|repair|b322ecab,SF5_0075,9,1+2,repair,,9-12.1809,,,repair,,9-12.1809,,,
+SF5_0091|1|acquisition|876a77f7,SF5_0091,1,1+2,acquisition,,10.11.1808,,,acquisition,,10.11.1808,,,
+SF5_0168|3|role|8e997b6e,SF5_0168,3,1+2,role,attached to royal naval college,,role_not_in_table,covered_by_rule,role,attached to royal naval college,,,規則で取れるようになった（B4 (role)  attached to royal naval college）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL1_0002|6|fitting|2bfc6ee3,SL1_0002,6,1+2,fitting,,1778,,,fitting,,1778,,,
+SL1_0002|45|role|13e3e884,SL1_0002,45,1+2,role,flagship,"4-12.1809, 3-12.1810, 4-11.1811 and 4-10.1812",role_seagoing,,role,flagship,"4-12.1809, 3-12.1810, 4-11.1811 and 4-10.1812",,,
+SL1_0002|45|role|3862fbbd,SL1_0002,45,1+2,role,flagship,12.1810-3.1811,role_seagoing,,role,flagship,12.1810-3.1811,,,
+SL1_0002|50|role|05d590f8,SL1_0002,50,1+2,role,port admiral's flagship,1.1824- 4.1830,role_not_in_table,covered_by_rule,role,port admiral's flagship,1.1824- 4.1830,,規則で取れるようになった（B4 (role) 1824-01 port admiral's flagship）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL1_0009|1|fitting|71abe9c5,SL1_0009,1,1+2,fitting,,25.7.1788,,covered_by_rule,fitting,,25.7.1788,,規則3周目 F2（定型部分の Completed D を建造の完了日として取る）,2026-10-08
+SL1_0009|9|conversion|5469fc61,SL1_0009,8,1+2,conversion,,5-11.1796,,,conversion,,5-11.1796,,,
+SL1_0016|2|fitting|f9f4624d,SL1_0016,2,1+2,fitting,,10.12.1805,,covered_by_rule,fitting,,10.12.1805,,規則3周目 F2（定型部分の Completed D を建造の完了日として取る）,2026-10-08
+SL1_0041|7|role|d83fe161,SL1_0041,7,1+2,role,engineers' training ship,12.1878,role_not_in_table,covered_by_rule,role,engineers' training ship,12.1878,,規則で取れるようになった（B4 (role) 1878-12 engineers' training ship）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL2_0004|5|acquisition|0a1683b1,SL2_0004,5,1+2,acquisition,,20.8.1794,,,acquisition,,20.8.1794,,,
+SL2_0005|10|repair|e9d7acef,SL2_0005,10,1+2,repair,,6-8.1806,,,repair,,6-8.1806,,,
+SL2_0005|31|conversion|1687a318,SL2_0005,31,1+2,conversion,,4.1878,,,conversion,,4.1878,,,
+SL2_0055|7|role|cc11b650,SL2_0055,7,1,role,depot ship,9.1868,role_not_in_table,covered_by_rule,role,depot ship,9.1868,,規則で取れるようになった（B4 (role) 1868-09 depot ship）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL2_0055|7|role_end|99100426,SL2_0055,7,1,role_end,depot ship,-1890,role_not_in_table,,role_end,depot ship,-1890,,,
+SL2_0076|5|conversion|ff34fff2,SL2_0076,5,1+2,conversion,,1878,,,conversion,,1878,,,
+SL2_0076|5|rating_change|ff34fff2,SL2_0076,5,1+2,rating_change,,1878,,,rating_change,,1878,,,
+SL3_0025|9|repair|dae14c04,SL3_0025,9,1+2,repair,,2-4.1797,,,repair,,2-4.1797,,,
+SL3_0025|12|repair|762e49a9,SL3_0025,12,1+2,repair,,?10.1798-1.1799,,,repair,,?10.1798-1.1799,,,
+SL3_0025|31|role|8c80ad2b,SL3_0025,31,1,role,receiving ship,,service:InNonCombatDuty,,role,receiving ship,,,,
+SL3_0027|9|repair|28b0aa10,SL3_0027,9,1,repair,,10-11.1795,,,repair,,10-11.1795,,,
+SL3_0051|19|role|3084ebd5,SL3_0051,19,1+2,role,quarantine service,1832-5,role_not_in_table,covered_by_rule,role,quarantine service,1832-5,,規則で取れるようになった（B4 (role) 1832 quarantine service）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL3_0057|4|repair|e729e145,SL3_0057,4,1+2,repair,,3-7.1814,,,repair,,3-7.1814,,,
+SL3_0067|5|repair|399d72eb,SL3_0067,5,1+2,repair,,"2-5.18""12",,,repair,,"2-5.18""12",,,
+SL3_0072|4|repair|2ba91981,SL3_0072,4,1+2,repair,,9-11.1813,,,repair,,9-11.1813,,,
+SL3_0089|8|transfer|a2f681ae,SL3_0089,8,1,transfer,,11.1861,,,transfer,,11.1861,,,
+SL3_0101|7|role|0a3eaace,SL3_0101,7,1+2,role,school ship,1860- 5,role_not_in_table,covered_by_rule,role,school ship,1860- 5,,規則で取れるようになった（B4 (role) 1860 school ship）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL3_0109|24|loss|9c7dd0e4,SL3_0109,24,1+2,loss,,2.12.1949,,,loss,,2.12.1949,,,
+SL3_0150|1|acquisition|5209b27d,SL3_0150,1,1+2,acquisition,,22 June 1819,,,acquisition,,22 June 1819,,,
+SL3_0150|3|acquisition|e9932f3d,SL3_0150,3,1,acquisition,,22.6.1819,,,acquisition,,22.6.1819,,,
+SL3_0151|8|repair|2fa02eea,SL3_0151,8,1,repair,,8-10.1858,,,repair,,8-10.1858,,,
+SL4_0006|28|role|e3a3d9c8,SL4_0006,28,1+2,role,water depot,1814,role_not_in_table,covered_by_rule,role,water depot,1814,,規則で取れるようになった（B4 (role) 1814 water depot）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL4_0006|30|loss|d2244c5d,SL4_0006,30,1+2,loss,,10.1830,,,loss,,10.1830,,,
+SL4_0047|11|role|f025abda,SL4_0047,11,1,role,troop transport,4.1844,role_not_in_table,covered_by_rule,role,troop transport,4.1844,,規則で取れるようになった（B4 (role) 1844-04 troop transport）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL4_0047|17|role|d4ac8e96,SL4_0047,17,1,role,coaling jetty,1870,role_not_in_table,covered_by_rule,role,coaling jetty,1870,,規則で取れるようになった（B4 (role) 1867-09-14 coaling jetty）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL4_0059|3|fitting|36977c9b,SL4_0059,3,1+2,fitting,,9.1848,,,fitting,,9.1848,,,
+SL4_0059|4|fitting|d99f2bf9,SL4_0059,4,1+2,fitting,,12.1848-28.7.1849,,,fitting,,12.1848-28.7.1849,,,
+SL4_0074|6|role_end|ba8f74e0,SL4_0074,6,1+2,role_end,royal yacht,5.1869,role_seagoing,,role_end,royal yacht,5.1869,,,
+SL4_0074|10|role|59e16ea7,SL4_0074,10,1+2,role,torpedo training establishment,5.1876,role_not_in_table,,role,torpedo training establishment,5.1876,,,
+SL4_0080|7|role|34f4351c,SL4_0080,7,1+2,role,jetty,1865,role_not_in_table,,role,jetty,1865,,,
+SM_0002|19|loss|0e1c6cd2,SM_0002,19,1+2,loss,,22.4.1848,,,loss,,22.4.1848,,,
+SM_0043|1|role|7ffe6c78,SM_0043,1,1,role,navy board yacht,,role_not_in_table,,role,navy board yacht,,,,
+SM_0058|4|breaking_up|e1720bf0,SM_0058,4,1+2,breaking_up,,27.9.1865,,,breaking_up,,27.9.1865,,,
+SM_0116|2|role|d72e238b,SM_0116,2,1,role,torpedo lighter,26.2.1889,role_not_in_table,,role,torpedo lighter,26.2.1889,,,
+SM_0122|2|role|3fd90353,SM_0122,2,1+2,role,dummy pier,8.1872,role_not_in_table,covered_by_rule,role,dummy pier,8.1872,,規則で取れるようになった（B4 (role) 1872-08 dummy pier）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SM_0136|2|renaming|f1b3ee13,SM_0136,2,1+2,renaming,,,,,renaming,,,,,
+SM_0137|2|renaming|1cc82d2f,SM_0137,2,1+2,renaming,,1872,,,renaming,,1872,,,
+SM_0141|2|role|b0964dae,SM_0141,2,1+2,role,barge,10.1867,role_not_in_table,covered_by_rule,role,barge,10.1867,,規則で取れるようになった（B4 (role) 1867-10 barge）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SM_0146|2|renaming|9f5f347d,SM_0146,2,1+2,renaming,,7.1879,,,renaming,,7.1879,,,
+SSL_0004|5|fitting|ae983d89,SSL_0004,5,1+2,fitting,,14.8.1796,,covered_by_rule,fitting,,14.8.1796,,規則で取れるようになった（D1 :Fitting 1796-08-14）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SSL_0006|4|repair|fec13edc,SSL_0006,4,1+2,repair,,21.4.1799,,,repair,,21.4.1799,,,
+SSL_0033|1|fitting|9b74f603,SSL_0033,1,1+2,fitting,,12.1814- 12.1.1815,,,fitting,,12.1814- 12.1.1815,,,
+PF_0002|15|repair|debcc447,PF_0002,15,2,repair,,11.1858-6.1859,,covered_by_rule,repair,,11.1858-6.1859,,規則で取れるようになった（D2 sealit:ShipRepair 1858-11）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SBS_0082|1|fitting|49a2acc1,SBS_0082,1,2,fitting,,5.7.1810,,covered_by_rule,fitting,,5.7.1810,,規則3周目 F2（定型部分の Completed D を建造の完了日として取る）,2026-10-08
+SC6_0028|13|in_ordinary|f1e1c2cf,SC6_0028,13,2,in_ordinary,,4.1807,,,in_ordinary,,4.1807,,,
+SF5_0042|13|decommissioning|ad565aec,SF5_0042,13,2,decommissioning,,9.1818,,,decommissioning,,9.1818,,,
+SF5_0042|22|role|c73fea3e,SF5_0042,22,2,role,depot ship,1832,role_not_in_table,covered_by_rule,role,depot ship,1832,,規則で取れるようになった（B4 (role) 1832 depot ship）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL2_0055|7|role|257d7b38,SL2_0055,7,2,role,depot ship,9.1868,role_not_in_table,covered_by_rule,role,depot ship,9.1868,,規則で取れるようになった（B4 (role) 1868-09 depot ship）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL3_0027|9|repair|1738e1a7,SL3_0027,9,2,repair,,10-11.1795,,,repair,,10-11.1795,,,
+SL3_0089|8|acquisition|a2f681ae,SL3_0089,8,2,acquisition,,11.1861,,,acquisition,,11.1861,,,
+SL3_0151|8|repair|50e2fb09,SL3_0151,8,2,repair,,8-10.1858,,,repair,,8-10.1858,,,
+SL4_0047|11|role|5caec270,SL4_0047,11,2,role,troop transport,4.1844,role_not_in_table,covered_by_rule,role,troop transport,4.1844,,規則で取れるようになった（B4 (role) 1844-04 troop transport）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SL4_0047|17|role|6cabb396,SL4_0047,17,2,role,coaling jetty,1870,role_not_in_table,covered_by_rule,role,coaling jetty,1870,,規則で取れるようになった（B4 (role) 1867-09-14 coaling jetty）：3周目の規則または判断表の追加（10/7）,2026-10-08
+SM_0043|1|role|6402ed23,SM_0043,1,2,role,navy board yacht,,role_not_in_table,,role,navy board yacht,,,,
+SM_0116|2|role|3f6b01be,SM_0116,2,2,role,torpedo lighter,26.2.1889,role_not_in_table,,role,torpedo lighter,26.2.1889,,,
+SM_0141|2|renaming|973a98ab,SM_0141,2,2,renaming,,10.1867,,,renaming,,10.1867,,,

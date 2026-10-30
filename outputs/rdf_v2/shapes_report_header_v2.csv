@@ -1,0 +1,9 @@
+﻿severity,shape,focus,message
+Violation,CompletionNotBeforeLaunch,myData:production_SBS_0137,PR2: completion (1713-11-07) is earlier than launch (1813-07-14); suspected error in the source (e.g. OCR)
+Violation,CompletionNotBeforeLaunch,myData:production_SCGVG_0187,PR2: completion (1756-07-03) is earlier than launch (1856-04-08); suspected error in the source (e.g. OCR)
+Warning,LongLaunchToCompletion,myData:production_ACD_0001,PR5: more than 5 years between launch (1857-04-25) and first completion (1864-08-20)
+Warning,LongLaunchToCompletion,myData:production_PM_0025,PR5: more than 5 years between launch (1865-01-31) and first completion (1886-12-31)
+Warning,LongLaunchToCompletion,myData:production_SCGVG_0004,PR5: more than 5 years between launch (1846-09-05) and first completion (1854-06-04)
+Warning,LongLaunchToCompletion,myData:production_SF5_0165,PR5: more than 5 years between launch (1847-04-15) and first completion (1853-05-31)
+Warning,LongLaunchToCompletion,myData:production_SL2_0012,PR5: more than 5 years between launch (1815-06-23) and first completion (1823-12-31)
+Warning,OrderNotAfterKeel,myData:production_PM_0017,PR4: order (1847-02-04) is later than keel laying (1847-01-05)

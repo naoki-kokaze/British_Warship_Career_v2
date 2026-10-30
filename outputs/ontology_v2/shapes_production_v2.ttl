@@ -1,0 +1,129 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix : <http://www.example.com/ontology/warship#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix sealit: <http://www.sealitproject.eu/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix shapes: <http://www.example.com/ontology/warship/shapes#> .
+
+# SHACL shapes for the production part of ontology v2 (draft.2, 2026-10-05; draft.1, 2026-09-30)
+# draft.2: dates are bounds (crm:P82a begin of the begin, crm:P81a end of the begin, crm:P81b begin of the end,
+# crm:P82b end of the end; xsd:date). A violation is reported only when it is certain whatever the precision of
+# the source: e.g. 'completion before launch' means the latest possible end of the completion (P82b) is earlier
+# than the earliest possible beginning of the launch (P82a). (draft.1 compared P79/P80/P82 literals by year and
+# by precision instead.)
+# Checks are written as SHACL-SPARQL constraints. Until pySHACL is installed, they are run by
+# scripts/run_shapes_sparql.py, which executes the same sh:select queries with rdflib.
+
+shapes: a owl:Ontology ;
+    sh:declare [ sh:prefix "crm" ; sh:namespace "http://www.cidoc-crm.org/cidoc-crm/"^^xsd:anyURI ] ,
+               [ sh:prefix "sealit" ; sh:namespace "http://www.sealitproject.eu/ontology/"^^xsd:anyURI ] ,
+               [ sh:prefix "" ; sh:namespace "http://www.example.com/ontology/warship#"^^xsd:anyURI ] ,
+               [ sh:prefix "xsd" ; sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ] .
+
+# PR1: every production is linked to exactly one ship
+shapes:ProductionProducesOneShip a sh:NodeShape ;
+    sh:targetClass crm:E12_Production ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PR1: crm:E12_Production must have exactly one crm:P108_has_produced to a sealit:Ship ({?n} found)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?n WHERE {
+                { SELECT $this (COUNT(?s) AS ?n) WHERE {
+                    $this a crm:E12_Production .
+                    OPTIONAL { $this crm:P108_has_produced ?s . ?s a sealit:Ship . }
+                  } GROUP BY $this }
+                FILTER (?n != 1)
+            }""" ;
+    ] .
+
+# PR2: the first completion does not end before the launch
+shapes:CompletionNotBeforeLaunch a sh:NodeShape ;
+    sh:targetClass crm:E12_Production ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PR2: completion ({?c}) is earlier than launch ({?l}); suspected error in the source (e.g. OCR)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?l ?c WHERE {
+                $this crm:P9_consists_of ?launch , ?comp .
+                ?launch a :Launching ; crm:P4_has_time-span/crm:P82a_begin_of_the_begin ?l .
+                ?comp a :Completion ; crm:P4_has_time-span/crm:P82b_end_of_the_end ?c .
+                FILTER ( ?c < ?l )
+            }""" ;
+    ] .
+
+# PR3: the keel is not laid after the launch
+shapes:KeelNotAfterLaunch a sh:NodeShape ;
+    sh:targetClass crm:E12_Production ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PR3: keel laying ({?k}) is later than launch ({?l}); suspected error in the source (e.g. OCR)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?k ?l WHERE {
+                $this crm:P4_has_time-span/crm:P82a_begin_of_the_begin ?k ;
+                      crm:P9_consists_of ?launch .
+                ?launch a :Launching ; crm:P4_has_time-span/crm:P82b_end_of_the_end ?l .
+                FILTER ( ?k > ?l )
+            }""" ;
+    ] .
+
+# PR4: the order is not later than the keel laying (warning: purchases and re-orders can be irregular)
+shapes:OrderNotAfterKeel a sh:NodeShape ;
+    sh:targetClass crm:E12_Production ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PR4: order ({?o}) is later than keel laying ({?k})" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?o ?k WHERE {
+                $this crm:P4_has_time-span/crm:P81a_end_of_the_begin ?k ;
+                      crm:P17_was_motivated_by ?ord .
+                ?ord a :Ordering ; crm:P4_has_time-span/crm:P82a_begin_of_the_begin ?o .
+                FILTER NOT EXISTS { ?ord a :Reordering }
+                FILTER ( ?o > ?k )
+            }""" ;
+    ] .
+
+# PR5: an unusually long interval between launch and first completion (warning, for review)
+shapes:LongLaunchToCompletion a sh:NodeShape ;
+    sh:targetClass crm:E12_Production ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PR5: more than 5 years between launch ({?l}) and first completion ({?c})" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?l ?c WHERE {
+                $this crm:P9_consists_of ?launch , ?comp .
+                ?launch a :Launching ; crm:P4_has_time-span/crm:P82a_begin_of_the_begin ?l .
+                ?comp a :Completion ; crm:P4_has_time-span/crm:P82b_end_of_the_end ?c .
+                FILTER ( YEAR(?c) - YEAR(?l) > 5 )
+            }""" ;
+    ] .
+
+# PR6: every amount of the first cost has exactly one kind and one value
+shapes:CostAmountTyped a sh:NodeShape ;
+    sh:targetClass crm:E97_Monetary_Amount ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PR6: crm:E97_Monetary_Amount must have exactly one :CostComponent type and one crm:P90_has_value ({?t} types, {?v} values)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?t ?v WHERE {
+                { SELECT $this (COUNT(DISTINCT ?ty) AS ?t) (COUNT(DISTINCT ?va) AS ?v) WHERE {
+                    $this a crm:E97_Monetary_Amount .
+                    OPTIONAL { $this crm:P2_has_type ?ty . ?ty a :CostComponent . }
+                    OPTIONAL { $this crm:P90_has_value ?va . }
+                  } GROUP BY $this }
+                FILTER (?t != 1 || ?v != 1)
+            }""" ;
+    ] .

@@ -1,0 +1,72 @@
+id,role,group,group_name,prefix,class,name,chars
+SF5_9041,trial,A,帆走・大型,SF5,APOLLO,Dartmouth,989
+SBS_9095,trial,B,帆走・小型,SBS,CHEROKEE,Rinaldo,1362
+PSPV_9003,trial,C,外輪,PSPV,LIGHTNING,Meteor,1052
+SCSL_9055,trial,D,スクリュー,SCSL,ROSARIO,Rapid,827
+SM_9036,trial,F,雑役・補助,SM,FURY,Resolute,1071
+SF5_9079,main,A,帆走・大型,SF5,PYRAMUS,San Fiorenza,2159
+SL2_9043,main,A,帆走・大型,SL2,ALBION,Aboukir,443
+SL2_9108,main,A,帆走・大型,SL2,BULWARK,Kent,87
+SL3_9001,main,A,帆走・大型,SL3,TRIUMPH,Valiant,1559
+SL3_9081,main,A,帆走・大型,SL3,ARMADA,Armada,656
+SL3_9162,main,A,帆走・大型,SL3,RH,Boscawen,1492
+SL4_9004,main,A,帆走・大型,SL4,PORTLAND,Nicholas,2071
+SBS_9111,main,B,帆走・小型,SBS,CHEROKEE,Sphinx,871
+SBS_9113,main,B,帆走・小型,SBS,ICARUS,Icarus,1088
+SBS_9193,main,B,帆走・小型,SBS,CONFOUNDER,Musquito,533
+SBS_9292,main,B,帆走・小型,SBS,FLYING FISH,Recruit,609
+SCS_9017,main,B,帆走・小型,SCS,NIMBLE,Pictou,450
+SCS_9033,main,B,帆走・小型,SCS,VIGILANT,Vigilant,315
+SSL_9012,main,B,帆走・小型,SSL,CORMORANT,Wanderer,695
+PF_9017,main,C,外輪,PF,MAGICIENNE,Magicienne,1063
+PSL_9008,main,C,外輪,PSL,ALECTO,Ardent,1219
+PSL_9023,main,C,外輪,PSL,BULLDOG,Scourge,965
+PSPV_9008,main,C,外輪,PSPV,ALBAN,Confiance,900
+PSPV_9035,main,C,外輪,PSPV,,LUCIFER,1301
+PSPV_9046,main,C,外輪,PSPV,,DOTEREL,573
+PSPV_9059,main,C,外輪,PSPV,,SWALLOW,686
+SCGVG_9095,main,D,スクリュー,SCGVG,DAPPER,Stork,380
+SCGVG_9121,main,D,スクリュー,SCGVG,ALBACORE,Charon,397
+SCGVG_9131,main,D,スクリュー,SCGVG,ALBACORE,Griper,455
+SCGVG_9215,main,D,スクリュー,SCGVG,CLOWN,Fenella,437
+SCGVG_9242,main,D,スクリュー,SCGVG,BRITOMART,Linnet,411
+SCSL_9011,main,D,スクリュー,SCSL,ARCHER,Archer,1207
+SCSL_9032,main,D,スクリュー,SCSL,RACER,Racer,782
+AIF_9002,main,E,装甲艦,AIF,WARRIOR,Black Prince,1056
+AIF_9006,main,E,装甲艦,AIF,HECTOR,Hector,1216
+AIF_9007,main,E,装甲艦,AIF,ACHILLES,Achilles,1199
+AIF_9009,main,E,装甲艦,AIF,ACHILLES,Agincourt,1556
+AWC_9003,main,E,装甲艦,AWC,ROYAL OAK,Ocean,593
+AWC_9008,main,E,装甲艦,AWC,FAVORITE,Favorite,536
+AWC_9010,main,E,装甲艦,AWC,REPULSE,Repulse,1158
+PM_9024,main,F,雑役・補助,PM,PSYCHE,Enchantress,562
+PM_9043,main,F,雑役・補助,PM,,DANUBE,392
+SM_9008,main,F,雑役・補助,SM,FURY,Meteor,836
+SM_9024,main,F,雑役・補助,SM,FURY,Albatross,272
+SM_9026,main,F,雑役・補助,SM,FURY,Violet,213
+SM_9046,main,F,雑役・補助,SM,FURY,Admiralty,337
+SM_9052,main,F,雑役・補助,SM,FURY,Sinbad,449
+SF5_9028,reserve,A,帆走・大型,SF5,PERSEVERANCE,Tribune,3005
+SF5_9124,reserve,A,帆走・大型,SF5,CYDNUS,Tiber,563
+SF5_9166,reserve,A,帆走・大型,SF5,DRUIDIANDROMEDA,Hotspur,450
+SL4_9029,reserve,A,帆走・大型,SL4,MAJESTIC,Saturn,2392
+SBS_9034,reserve,B,帆走・小型,SBS,CRUIZER,Scylla,1562
+SBS_9112,reserve,B,帆走・小型,SBS,CHEROKEE,Cameleon,1207
+SBS_9117,reserve,B,帆走・小型,SBS,ICARUS,Sabine,803
+SBS_9226,reserve,B,帆走・小型,SBS,PANDORA,Dolphin,2103
+PF_9005,reserve,C,外輪,PF,SAMPSON,Dragon,1072
+PSL_9001,reserve,C,外輪,PSL,HYDRA,Hydra,1815
+PSL_9018,reserve,C,外輪,PSL,DRIVER,Spiteful,1570
+PSPV_9036,reserve,C,外輪,PSPV,,REDWING,822
+SCGVG_9079,reserve,D,スクリュー,SCGVG,DAPPER,Lark,726
+SCGVG_9181,reserve,D,スクリュー,SCGVG,ALBACORE,Rocket,276
+SCGVG_9201,reserve,D,スクリュー,SCGVG,CHEERFUL,Garland,296
+SCGVG_9217,reserve,D,スクリュー,SCGVG,CLOWN,Handy,631
+AIF_9005,reserve,E,装甲艦,AIF,HECTOR,Valiant,1263
+AIF_9008,reserve,E,装甲艦,AIF,ACHILLES,Minotaur,1001
+AWC_9004,reserve,E,装甲艦,AWC,ROYAL OAK,Caledonia,1073
+AWC_9005,reserve,E,装甲艦,AWC,ROYAL ALFRED,Royal Alfred,722
+PM_9021,reserve,F,雑役・補助,PM,,COROMANDEL,977
+PM_9055,reserve,F,雑役・補助,PM,,MOSLEM,504
+SM_9017,reserve,F,雑役・補助,SM,FURY,Swallow,478
+SM_9028,reserve,F,雑役・補助,SM,FURY,Plover,966

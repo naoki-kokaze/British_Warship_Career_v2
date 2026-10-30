@@ -1,0 +1,242 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix : <http://www.example.com/ontology/warship#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix sealit: <http://www.sealitproject.eu/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix shapes: <http://www.example.com/ontology/warship/shapes#> .
+
+# SHACL shapes for the career events and Presences of ontology v2 (rules v1, 2026-10-07)
+# Data: outputs/rdf_v2/events_v2.ttl (with header_v2.ttl and the ontology).
+# As in shapes_production_v2.ttl, dates are bounds (P82a/P81a/P81b/P82b) and a date-based violation is reported
+# only when it is certain whatever the precision of the source.
+# Record layer: Presences of the same ship may overlap across the two axes; the checks below are those that must
+# hold even in the record layer (decisions A1, B1, D1, F; docs/jinmoncom2026_rules_v1_mapping_draft_20261005.md).
+
+shapes: a owl:Ontology ;
+    sh:declare [ sh:prefix "crm" ; sh:namespace "http://www.cidoc-crm.org/cidoc-crm/"^^xsd:anyURI ] ,
+               [ sh:prefix "sealit" ; sh:namespace "http://www.sealitproject.eu/ontology/"^^xsd:anyURI ] ,
+               [ sh:prefix "" ; sh:namespace "http://www.example.com/ontology/warship#"^^xsd:anyURI ] ,
+               [ sh:prefix "myData" ; sh:namespace "http://www.example.com/myData/"^^xsd:anyURI ] ,
+               [ sh:prefix "xsd" ; sh:namespace "http://www.w3.org/2001/XMLSchema#"^^xsd:anyURI ] .
+
+# PS1: a Presence carries exactly one status, on one of the two axes (decision A1)
+shapes:PresenceHasOneStatus a sh:NodeShape ;
+    sh:targetClass crm:E93_Presence ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PS1: a Presence must have exactly one :has_service_status or :has_work_status ({?n} found)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?n WHERE {
+                { SELECT $this (COUNT(?s) AS ?n) WHERE {
+                    $this a crm:E93_Presence .
+                    OPTIONAL { $this :has_service_status|:has_work_status ?s . }
+                  } GROUP BY $this }
+                FILTER (?n != 1)
+            }""" ;
+    ] .
+
+# PS2: a Presence is the presence of exactly one ship and has exactly one time-span
+shapes:PresenceOfOneShip a sh:NodeShape ;
+    sh:targetClass crm:E93_Presence ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PS2: a Presence must belong to exactly one sealit:Ship ({?ns} found) and have exactly one crm:P164 ({?nt} found)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?ns ?nt WHERE {
+                { SELECT $this (COUNT(DISTINCT ?s) AS ?ns) (COUNT(DISTINCT ?t) AS ?nt) WHERE {
+                    $this a crm:E93_Presence .
+                    OPTIONAL { ?s crm:P195i_had_presence $this . ?s a sealit:Ship . }
+                    OPTIONAL { $this crm:P164_is_temporally_specified_by ?t . }
+                  } GROUP BY $this }
+                FILTER (?ns != 1 || ?nt != 1)
+            }""" ;
+    ] .
+
+# PS3: being broken up is terminal on the service axis (decision D1). The breaking up is compared by its beginning,
+# or by its completion when the source gives only the completion ('BU completed D', rule U2)
+shapes:BeingBrokenUpIsTerminal a sh:NodeShape ;
+    sh:targetClass crm:E93_Presence ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PS3: a service status ({?st}, {?other}) begins after the breaking up began or was completed ({?bu}); suspected error in the source (e.g. OCR)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?other ?st ?bu WHERE {
+                $this :has_service_status :BeingBrokenUp ; crm:P164_is_temporally_specified_by ?bts .
+                OPTIONAL { ?bts crm:P81a_end_of_the_begin ?bb . } OPTIONAL { ?bts crm:P82b_end_of_the_end ?be . }
+                BIND (COALESCE(?bb, ?be) AS ?bu)
+                ?ship crm:P195i_had_presence $this , ?other .
+                ?other :has_service_status ?st ; crm:P164_is_temporally_specified_by/crm:P82a_begin_of_the_begin ?ob .
+                FILTER (?other != $this && ?ob > ?bu)
+            }""" ;
+    ] .
+
+# PS4: no dockyard work during or after the breaking up (decision D1)
+shapes:NoWorkDuringBreakingUp a sh:NodeShape ;
+    sh:targetClass crm:E93_Presence ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PS4: dockyard work ({?ws}, {?work}) begins after the breaking up began or was completed ({?bu}); suspected error in the source (e.g. OCR)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?work ?ws ?bu WHERE {
+                $this :has_service_status :BeingBrokenUp ; crm:P164_is_temporally_specified_by ?bts .
+                OPTIONAL { ?bts crm:P81a_end_of_the_begin ?bb . } OPTIONAL { ?bts crm:P82b_end_of_the_end ?be . }
+                BIND (COALESCE(?bb, ?be) AS ?bu)
+                ?ship crm:P195i_had_presence $this , ?work .
+                ?work :has_work_status ?w ; crm:P164_is_temporally_specified_by/crm:P82a_begin_of_the_begin ?ws .
+                FILTER (?ws > ?bu)
+            }""" ;
+    ] .
+
+# PS5: a Presence does not end before it begins (a later event dated earlier than the preceding one)
+shapes:PresenceNotInverted a sh:NodeShape ;
+    sh:targetClass crm:E93_Presence ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PS5: the Presence ends ({?e}) before it begins ({?b}): the events around it are out of date order; suspected error in the source (e.g. OCR) or a non-chronological narrative" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?b ?e WHERE {
+                $this crm:P164_is_temporally_specified_by ?ts .
+                ?ts crm:P82a_begin_of_the_begin ?b ; crm:P82b_end_of_the_end ?e .
+                FILTER (?e < ?b)
+            }""" ;
+    ] .
+
+# PS6: paid off without a recorded commission (decision B1: reported, not filled in)
+shapes:PaidOffAfterCommission a sh:NodeShape ;
+    sh:targetClass crm:E93_Presence ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PS6: paid off ({?b}) with no commission recorded before it (decision B1: not inferred)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?b WHERE {
+                $this :has_service_status :PaidOff ; crm:P182i_starts_after_or_with_the_end_of ?ev ;
+                      crm:P164_is_temporally_specified_by/crm:P82a_begin_of_the_begin ?b .
+                ?ev a :Decommissioning .
+                ?ship crm:P195i_had_presence $this .
+                FILTER NOT EXISTS {
+                    ?ship crm:P195i_had_presence ?c .
+                    ?c :has_service_status :InCommission ; crm:P164_is_temporally_specified_by/crm:P81a_end_of_the_begin ?cb .
+                    FILTER (?cb <= ?b)
+                }
+            }""" ;
+    ] .
+
+# PS7: an event's own time-span is not inverted (e.g. 'Fitted 8.1797-2.1789')
+shapes:EventNotInverted a sh:NodeShape ;
+    sh:targetClass crm:E52_Time-Span ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PS7: the time-span ends ({?e}) before it begins ({?b}); suspected error in the source (e.g. OCR)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?b ?e WHERE {
+                $this crm:P82a_begin_of_the_begin ?b ; crm:P82b_end_of_the_end ?e .
+                FILTER NOT EXISTS { ?p crm:P164_is_temporally_specified_by $this . ?p a crm:E93_Presence .
+                                    FILTER NOT EXISTS { ?x crm:P4_has_time-span $this . } }
+                FILTER (?e < ?b)
+            }""" ;
+    ] .
+
+# PS8: events after the end of the naval career (sale, gift, transfer of title, loss, breaking up by the Navy)
+# Info only: resales, service under a colonial government and breaking up of a wreck are correct records.
+shapes:EventAfterCareerEnd a sh:NodeShape ;
+    sh:targetClass sealit:Ship ;
+    sh:severity sh:Info ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PS8: {?ev} ({?b}) is after the end of the naval career ({?end}, ended by {?e})" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?ev ?b ?end ?e WHERE {
+                { ?end crm:P13_destroyed $this . }
+                UNION { ?end crm:P24_transferred_title_of $this ; crm:P23_transferred_title_from myData:royal_navy . }
+                ?end crm:P4_has_time-span/crm:P82b_end_of_the_end ?e .
+                ?ev :modifies_ship|crm:P13_destroyed|crm:P24_transferred_title_of|crm:P30_transferred_custody_of|crm:P140_assigned_attribute_to|crm:P12_occurred_in_the_presence_of $this ;
+                    crm:P4_has_time-span/crm:P82a_begin_of_the_begin ?b .
+                FILTER (?ev != ?end && ?b > ?e)
+                FILTER NOT EXISTS {
+                    { ?earlier crm:P13_destroyed $this . }
+                    UNION { ?earlier crm:P24_transferred_title_of $this ; crm:P23_transferred_title_from myData:royal_navy . }
+                    ?earlier crm:P4_has_time-span/crm:P82b_end_of_the_end ?e2 .
+                    FILTER (?e2 < ?e)
+                }
+            }""" ;
+    ] .
+
+# PS9 (round 2, 2026-10-07): a commission followed by a recommissioning with no paying off between (the end of the
+# first commission is not stated; the record layer assumes the status continued, rule P2). Adjudication #40, #45
+shapes:RecommissionWithoutPayingOff a sh:NodeShape ;
+    sh:targetClass crm:E93_Presence ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PS9: in commission until a recommissioning ({?next}) with no paying off between; the end of the commission is not stated (rule P2 assumes it continued)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?next WHERE {
+                $this :has_service_status :InCommission ; crm:P182_ends_before_or_with_the_start_of ?next .
+                ?next a :Recommissioning .
+            }""" ;
+    ] .
+
+# PS10 (round 2, 2026-10-07): the same kind of event twice within about two months (a statement repeated in the
+# source, e.g. 'paid off 19.8.1814 at Plymouth' and 'Paid off 9.1814'). Adjudication #11
+shapes:NearDuplicateEvent a sh:NodeShape ;
+    sh:targetClass sealit:Ship ;
+    sh:severity sh:Warning ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "PS10: {?a} and {?b} are of the same kind ({?k}) and dated within two months; possibly the same event stated twice" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?a ?b ?k WHERE {
+                ?a a ?k ; crm:P4_has_time-span/crm:P82a_begin_of_the_begin ?da .
+                FILTER (?k IN (:Commissioning, :Recommissioning, :Decommissioning, crm:E96_Purchase, crm:E6_Destruction))
+                ?b a ?k ; crm:P4_has_time-span/crm:P82a_begin_of_the_begin ?db .
+                ?a crm:P12_occurred_in_the_presence_of|crm:P24_transferred_title_of|crm:P13_destroyed $this .
+                ?b crm:P12_occurred_in_the_presence_of|crm:P24_transferred_title_of|crm:P13_destroyed $this .
+                BIND ((YEAR(?db) * 12 + MONTH(?db)) - (YEAR(?da) * 12 + MONTH(?da)) AS ?gap)
+                FILTER (STR(?a) < STR(?b) && ?gap >= -2 && ?gap <= 2)
+            }""" ;
+    ] .
+
+# ST1 (2026-10-09): a station deployment has one station (a place with a station type), one ship and one stating event
+shapes:StationDeploymentStructure a sh:NodeShape ;
+    sh:targetClass :StationDeployment ;
+    sh:severity sh:Violation ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "ST1: a :StationDeployment must have exactly one crm:P7 to a typed station ({?np} found), one ship ({?ns} found) and one event stating it ({?ne} found)" ;
+        sh:prefixes shapes: ;
+        sh:select """
+            SELECT $this ?np ?ns ?ne WHERE {
+                { SELECT $this (COUNT(DISTINCT ?p) AS ?np) WHERE {
+                    $this a :StationDeployment .
+                    OPTIONAL { $this crm:P7_took_place_at ?p . ?p a crm:E53_Place ; crm:P2_has_type ?t . ?t a :StationType . }
+                  } GROUP BY $this }
+                { SELECT $this (COUNT(DISTINCT ?s) AS ?ns) WHERE {
+                    $this a :StationDeployment .
+                    OPTIONAL { $this crm:P12_occurred_in_the_presence_of ?s . }
+                  } GROUP BY $this }
+                { SELECT $this (COUNT(DISTINCT ?e) AS ?ne) WHERE {
+                    $this a :StationDeployment .
+                    OPTIONAL { ?e :has_station_deployment $this . }
+                  } GROUP BY $this }
+                FILTER (?np != 1 || ?ns != 1 || ?ne != 1)
+            }""" ;
+    ] .

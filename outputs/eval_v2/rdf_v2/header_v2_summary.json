@@ -1,0 +1,19 @@
+{
+  "ships": 71,
+  "triples": 6539,
+  "E12_Production": 71,
+  "production_begin_from_keel": 54,
+  "production_end_from_first_completion": 47,
+  "Ordering": 54,
+  "Launching": 58,
+  "Completion": 47,
+  "cost_amounts": 102,
+  "Reordering": 2,
+  "Fitting(later C:)": 2,
+  "measurement_part_of_production": 34,
+  "E16_Measurement": 51,
+  "E54_Dimension": 303,
+  "dimension_status_parsed": 258,
+  "dimension_status_needs_review": 29,
+  "dimension_status_formula_resolved": 16
+}

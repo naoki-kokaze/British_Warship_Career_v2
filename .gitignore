@@ -1,0 +1,6 @@
+# 典拠の原文（各自で用意する入力。公開しない）
+sources/v1/strata/
+sources/eval_v2/strata/
+outputs/winfield_text/
+.DS_Store
+__pycache__/

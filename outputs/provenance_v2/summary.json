@@ -1,0 +1,17 @@
+{
+ "all": {
+  "records": {
+   "rule_direct": 6791,
+   "rule_inferred": 144,
+   "llm": 1,
+   "total": 6936
+  },
+  "triples": {
+   "rule_direct": 65280,
+   "rule_inferred": 1365,
+   "llm": 12,
+   "shared": 6703,
+   "total": 73360
+  }
+ }
+}

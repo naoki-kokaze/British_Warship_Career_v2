@@ -1,0 +1,892 @@
+@prefix : <http://www.example.com/ontology/warship#> .
+@prefix myData: <http://www.example.com/myData/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sealit: <http://www.sealitproject.eu/ontology/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://www.example.com/ontology/warship> a owl:Ontology ;
+  owl:versionInfo "2.0.0-draft.2 (2026-10-05): CIDOC CRM terms aligned with the official 7.1.3 RDFS (dates by P82a/P81a/P81b/P82b, P79/P80 for notes only; P43/P90/P182 restored); two status axes; renaming, transfer, sale and measurement added. draft.1 (2026-09-30): production and first cost" ;
+  rdfs:comment """Policy from draft.2 (audit: phd_thesis/jinmoncom2026/docs/jinmoncom2026_ontology_v1_cidoc_audit_20261001.md; decisions: jinmoncom2026_ontology_v2_decisions_20261001.md):
+(1) CIDOC CRM terms are declared exactly as in the official RDFS 7.1.3 (domain, range, direct superclass/superproperty); this ontology never narrows or widens them.
+(2) Project-specific constraints (e.g. which statuses a Presence may carry) are written as SHACL shapes, not as RDFS domains/ranges, so that errors are reported rather than silently inferred away.
+(3) Custom properties (namespace :) may have their own domain/range as long as they fall within those of their CIDOC superproperty."""@en ;
+  owl:imports
+    <http://www.cidoc-crm.org/cidoc-crm/> ,
+    <http://purl.org/dc/terms/> ,
+    <http://www.sealitproject.eu/ontology/> .
+
+#################################################################
+#    Object Properties - CIDOC CRM
+#    draft.2: domain, range and direct superproperty exactly as in the official RDFS 7.1.3
+#    (sources/reference/CIDOC_CRM_v7.1.3.rdf). Do not narrow them here; use SHACL instead.
+#################################################################
+
+crm:P1_is_identified_by a owl:ObjectProperty ;
+    rdfs:domain crm:E1_CRM_Entity ;
+    rdfs:range crm:E41_Appellation ;
+    rdfs:comment "v2: links a ship to each of its names (crm:E42_Identifier), old and new."@en .
+
+crm:P2_has_type a owl:ObjectProperty ;
+    rdfs:domain crm:E1_CRM_Entity ;
+    rdfs:range crm:E55_Type .
+
+crm:P4_has_time-span a owl:ObjectProperty ;
+    rdfs:domain crm:E2_Temporal_Entity ;
+    rdfs:range crm:E52_Time-Span .
+
+crm:P7_took_place_at a owl:ObjectProperty ;
+    rdfs:domain crm:E4_Period ;
+    rdfs:range crm:E53_Place ;
+    rdfs:comment "v2: for events. The place of a Presence is given by crm:P167_was_within, not by P7 (v1 misused P7 on Presence 410 times)."@en .
+
+crm:P9_consists_of a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P10i_contains ;
+    rdfs:domain crm:E4_Period ;
+    rdfs:range crm:E4_Period ;
+    rdfs:comment "v2: links crm:E12_Production to its parts (:Launching, :Completion, the as-built crm:E16_Measurement)."@en .
+
+crm:P12i_was_present_at a owl:ObjectProperty ;
+    rdfs:domain crm:E77_Persistent_Item ;
+    rdfs:range crm:E5_Event .
+
+crm:P13_destroyed a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P93_took_out_of_existence ;
+    rdfs:domain crm:E6_Destruction ;
+    rdfs:range crm:E18_Physical_Thing .
+
+crm:P17_was_motivated_by a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P15_was_influenced_by ;
+    rdfs:domain crm:E7_Activity ;
+    rdfs:range crm:E1_CRM_Entity ;
+    rdfs:comment "v2: links crm:E12_Production to the :Ordering (and :Reordering) that motivated it, and the breaking up by the Navy (crm:E6_Destruction) to the :BreakingUpOrder, and a sale (crm:E96_Purchase) to the :SaleOrder (2026-10-07)."@en .
+
+crm:P21_had_general_purpose a owl:ObjectProperty ;
+    rdfs:domain crm:E7_Activity ;
+    rdfs:range crm:E55_Type ;
+    rdfs:comment "Use to record the investment purpose of an activity (value: an :Investment, e.g. :CombatCapabilityInvestment / :NonCombatDutyInvestment). Attach when the activity inherently has a purpose tied to spending; if no cost is recorded, that is allowed but should be justified in rdfs:comment per data policy. draft.2: domain/range restored to the official E7/E55 (v1: E5/:Investment; v1 data used it on crm:E6_Destruction twice, which SHACL should report)."@en .
+
+crm:P12_occurred_in_the_presence_of a owl:ObjectProperty ;
+    rdfs:domain crm:E5_Event ;
+    rdfs:range crm:E77_Persistent_Item ;
+    rdfs:comment "v2 (rules v1, 2026-10-07): links a commissioning, decommissioning or command appointment (crm:E7_Activity subclasses) to the ship."@en .
+
+crm:P22_transferred_title_to a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P14_carried_out_by ;
+    rdfs:domain crm:E8_Acquisition ;
+    rdfs:range crm:E39_Actor ;
+    rdfs:comment "v2 (rules v1, 2026-10-07): the buyer or recipient; the Royal Navy (myData:royal_navy) when the ship is acquired."@en .
+
+crm:P23_transferred_title_from a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P14_carried_out_by ;
+    rdfs:domain crm:E8_Acquisition ;
+    rdfs:range crm:E39_Actor ;
+    rdfs:comment "v2 (rules v1, 2026-10-07): the Royal Navy when the ship is sold, given or transferred to another government; the former owner when it is acquired (if named)."@en .
+
+crm:P24_transferred_title_of a owl:ObjectProperty ;
+    rdfs:domain crm:E8_Acquisition ;
+    rdfs:range crm:E18_Physical_Thing .
+
+crm:P28_custody_surrendered_by a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P14_carried_out_by ;
+    rdfs:domain crm:E10_Transfer_of_Custody ;
+    rdfs:range crm:E39_Actor ;
+    rdfs:comment "v2 (rules v1, 2026-10-07): the Royal Navy when the ship is lent or transferred."@en .
+
+crm:P29_custody_received_by a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P14_carried_out_by ;
+    rdfs:domain crm:E10_Transfer_of_Custody ;
+    rdfs:range crm:E39_Actor ;
+    rdfs:comment "v2 (rules v1, 2026-10-07): the receiving body (e.g. Coastguard, Metropolitan Asylums Board); the Royal Navy when the ship is returned."@en .
+
+crm:P30_transferred_custody_of a owl:ObjectProperty ;
+    rdfs:domain crm:E10_Transfer_of_Custody ;
+    rdfs:range crm:E18_Physical_Thing .
+
+crm:P31_has_modified a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P12_occurred_in_the_presence_of ;
+    rdfs:domain crm:E11_Modification ;
+    rdfs:range crm:E18_Physical_Thing .
+
+crm:P37_assigned a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P141_assigned ;
+    rdfs:domain crm:E15_Identifier_Assignment ;
+    rdfs:range crm:E42_Identifier ;
+    rdfs:comment "v2: the new name given by a renaming (decision E, 2026-10-01)."@en .
+
+crm:P38_deassigned a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P141_assigned ;
+    rdfs:domain crm:E15_Identifier_Assignment ;
+    rdfs:range crm:E42_Identifier ;
+    rdfs:comment "v2: the old name taken away by a renaming (decision E, 2026-10-01)."@en .
+
+crm:P39_measured a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P140_assigned_attribute_to ;
+    rdfs:domain crm:E16_Measurement ;
+    rdfs:range crm:E18_Physical_Thing .
+
+crm:P40_observed_dimension a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P141_assigned ;
+    rdfs:domain crm:E16_Measurement ;
+    rdfs:range crm:E54_Dimension .
+
+crm:P43_has_dimension a owl:ObjectProperty ;
+    rdfs:domain crm:E70_Thing ;
+    rdfs:range crm:E54_Dimension ;
+    rdfs:comment "v2: shortcut from a ship to a dimension also recorded through a crm:E16_Measurement (decision G). draft.2 restores the official domain E70; v1 had E5_Event/E97 for the building cost, which made any measured ship an event by inference."@en .
+
+crm:P91_has_unit a owl:ObjectProperty ;
+    rdfs:domain crm:E54_Dimension ;
+    rdfs:range crm:E58_Measurement_Unit .
+
+crm:P108_has_produced a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P31_has_modified , crm:P92_brought_into_existence ;
+    rdfs:domain crm:E12_Production ;
+    rdfs:range crm:E24_Physical_Human-Made_Thing ;
+    rdfs:comment "v2: every crm:E12_Production must be linked to the ship it produced (v1 linked only 1 of 253)."@en .
+
+crm:P140_assigned_attribute_to a owl:ObjectProperty ;
+    rdfs:domain crm:E13_Attribute_Assignment ;
+    rdfs:range crm:E1_CRM_Entity .
+
+crm:P141_assigned a owl:ObjectProperty ;
+    rdfs:domain crm:E13_Attribute_Assignment ;
+    rdfs:range crm:E1_CRM_Entity .
+
+crm:P164_is_temporally_specified_by a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P160_has_temporal_projection ;
+    rdfs:domain crm:E93_Presence ;
+    rdfs:range crm:E52_Time-Span .
+
+crm:P166i_had_presence a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P10i_contains ;
+    rdfs:domain crm:E92_Spacetime_Volume ;
+    rdfs:range crm:E93_Presence .
+
+crm:P167_was_within a owl:ObjectProperty ;
+    rdfs:domain crm:E93_Presence ;
+    rdfs:range crm:E53_Place .
+
+crm:P179_had_sales_price a owl:ObjectProperty ;
+    rdfs:domain crm:E96_Purchase ;
+    rdfs:range crm:E97_Monetary_Amount ;
+    rdfs:comment "v2: the price of a sale of a ship (decision G-3). Building and repair costs use :incurred_cost instead."@en .
+
+crm:P180_has_currency a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P91_has_unit ;
+    rdfs:domain crm:E97_Monetary_Amount ;
+    rdfs:range crm:E98_Currency .
+
+crm:P182_ends_before_or_with_the_start_of a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P176_starts_before_the_start_of , crm:P185_ends_before_the_end_of ;
+    rdfs:domain crm:E2_Temporal_Entity ;
+    rdfs:range crm:E2_Temporal_Entity ;
+    rdfs:comment "v2: link temporal entities (a Presence and an event) directly. v1 linked a Presence's time-span node, which is not a temporal entity."@en .
+
+crm:P182i_starts_after_or_with_the_end_of a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P176i_starts_after_the_start_of , crm:P185i_ends_after_the_end_of ;
+    rdfs:domain crm:E2_Temporal_Entity ;
+    rdfs:range crm:E2_Temporal_Entity ;
+    rdfs:comment "v2: link temporal entities (a Presence and an event) directly, as for crm:P182."@en .
+
+crm:P195i_had_presence a owl:ObjectProperty ;
+    rdfs:domain crm:E18_Physical_Thing ;
+    rdfs:range crm:E93_Presence .
+
+#crm:P196_defines a owl:ObjectProperty ;
+#    rdfs:subPropertyOf owl:topObjectProperty ;
+#    rdfs:domain sealit:Ship ;
+#    rdfs:range crm:E92_Spacetime_Volume .
+
+#################################################################
+#    Object Properties - Sealit
+#################################################################
+
+sealit:repaired a owl:ObjectProperty ;
+    rdfs:subPropertyOf :modifies_ship ;
+    rdfs:domain sealit:ShipRepair ;
+    rdfs:range sealit:Ship .
+
+#################################################################
+#    Object Properties - Custom (:warship)
+#################################################################
+
+# Subproperties of crm:P2_has_type
+:has_operational_status a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P2_has_type ;
+    rdfs:domain crm:E93_Presence ;
+    rdfs:range :OperationalStatus ;
+    rdfs:comment "v2 (decision A1, 2026-10-01): kept only as the common superproperty of :has_service_status and :has_work_status, so that SPARQL written for v1 still finds both. New data must use one of the two subproperties, never this property directly. v1 used it for both axes on one Presence; that rule is superseded."@en .
+
+:has_service_status a owl:ObjectProperty ;
+    rdfs:subPropertyOf :has_operational_status ;
+    rdfs:domain crm:E93_Presence ;
+    rdfs:range :ServiceStatus ;
+    rdfs:label "has service status"@en ;
+    rdfs:comment "v2: the ship's status in service (in commission, in Ordinary, paid off, non-combat duty, being broken up). Record layer: each Presence carries exactly one status, either this or :has_work_status, as stated in one statement of the source; Presences may overlap (e.g. paid off and under repair). Analysis layer: the career is cut into non-overlapping intervals, each with exactly one service status and at most one work status. State transitions in the event history analysis are defined on this axis only."@en .
+
+:has_work_status a owl:ObjectProperty ;
+    rdfs:subPropertyOf :has_operational_status ;
+    rdfs:domain crm:E93_Presence ;
+    rdfs:range :DockyardWork ;
+    rdfs:label "has dockyard work status"@en ;
+    rdfs:comment "v2: dockyard work on the ship (repair, fitting). Independent of the service status: a ship may be paid off or in Ordinary and under repair at the same time. In the event history analysis this axis is a time-varying covariate, not a state."@en .
+
+:has_propulsion_type a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P2_has_type ;
+    rdfs:domain crm:E93_Presence ;
+    rdfs:range :PropulsionType ;
+    rdfs:comment "Specifies the primary means of propulsion for the ship during a specific presence."@en .
+
+:has_ship_rating a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P2_has_type ;
+    rdfs:domain crm:E93_Presence ;
+    rdfs:range :ShipRating .
+
+:has_ship_role a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P2_has_type ;
+    rdfs:domain crm:E93_Presence ;
+    rdfs:range :ShipRole ;
+    rdfs:comment "Within a single Presence, :has_ship_role and :has_ship_type must not be assigned simultaneously. If a specific non-combat operational role is defined (e.g., :HospitalShip, :GuardShip), use :has_ship_role and omit :has_ship_type, which is used to express its general function as a warship."@en .
+
+:has_ship_type a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P2_has_type ;
+    rdfs:domain crm:E93_Presence ;
+    rdfs:range :ShipType ;
+    rdfs:comment "Specifies the fundamental design/tactical classification of the ship during a specific presence."@en .
+
+# Subproperties of crm:P31_has_modified
+:modifies_ship a owl:ObjectProperty ;
+  rdfs:label "modifies ship"@en ;
+  rdfs:comment "Generic link from an E11_Modification event to the ship it modifies."@en ;
+  rdfs:subPropertyOf crm:P31_has_modified ;
+  rdfs:domain crm:E11_Modification ;
+  rdfs:range  sealit:Ship .
+
+:converts_into a owl:ObjectProperty ;
+  rdfs:label "converts into (assigns new ship role in conversion context)"@en ;
+  rdfs:comment "Use alongside the physical modification link (:modifies_ship). For typing/role assignment itself, E13_Attribute_Assignment with P140/P141 is the canonical pattern."@en ;
+  rdfs:domain :ShipConversion ;
+  rdfs:range  :ShipRole .
+
+:incurred_cost a owl:ObjectProperty ;
+  rdfs:label "incurred cost"@en ;
+  rdfs:comment "Cost magnitude (E97_Monetary_Amount) incurred by an activity (typically an E11_Modification). draft.2 (decision G-2): no longer a subproperty of crm:P43_has_dimension, whose official domain is a thing, not an event. The way data are written is unchanged. Sale prices use crm:P179_had_sales_price."@en ;
+  rdfs:domain crm:E5_Event ;
+  rdfs:range  crm:E97_Monetary_Amount .
+
+# Subproperties of crm:P141_assigned
+#:changes_operational_status a owl:ObjectProperty ;
+#    rdfs:subPropertyOf crm:P141_assigned ;
+#    rdfs:domain crm:E7_Activity ;
+#    rdfs:range :OperationalStatus .
+
+:changes_ship_rating a owl:ObjectProperty ;
+    rdfs:subPropertyOf crm:P141_assigned ;
+    rdfs:domain crm:E13_Attribute_Assignment ;
+    rdfs:range  :ShipRating ;
+    rdfs:comment "Use on E13_Attribute_Assignment that assigns a new :ShipRating to a ship; subsequent E93 presences must reflect the new rating prospectively only."@en .
+
+
+#################################################################
+#    Data properties - CIDOC CRM
+#################################################################
+
+# draft.2: dates. The official meaning of P79/P80 is a NOTE on the beginning/end (certainty, precision,
+# authority), not the date itself. v1 (1,784 uses) and draft.1 put dates in P79/P80; that was a misreading.
+# Dates are now given as bounds:
+#   begin of the begin (P82a) <= end of the begin (P81a)   ... the beginning lies between these
+#   begin of the end   (P81b) <= end of the end   (P82b)   ... the end lies between these
+# Values are xsd:date (decided 2026-10-05). P81a/P81b/P82a/P82b are not in the CIDOC CRM definition itself but in its
+# official RDFS implementation (7.1.3, approved by CRM-SIG), following "How to implement CRM Time in RDF".
+# A date known only to the month (Winfield '2.1797') becomes 1797-02-01 .. 1797-02-28;
+# to the year, 1 Jan .. 31 Dec. The date as written in the source is kept in :source_text of the event.
+
+crm:P79_beginning_is_qualified_by a owl:DatatypeProperty ;
+    rdfs:subPropertyOf crm:P3_has_note ;
+    rdfs:domain crm:E52_Time-Span ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "v2: a note on the beginning only, e.g. that the source marks the date as uncertain ('?'). Never a date."@en .
+
+crm:P80_end_is_qualified_by a owl:DatatypeProperty ;
+    rdfs:subPropertyOf crm:P3_has_note ;
+    rdfs:domain crm:E52_Time-Span ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "v2: a note on the end only, as for crm:P79. Never a date."@en .
+
+crm:P81a_end_of_the_begin a owl:DatatypeProperty ;
+    rdfs:subPropertyOf crm:P81_ongoing_throughout ;
+    rdfs:domain crm:E52_Time-Span ;
+    rdfs:range rdfs:Literal .
+
+crm:P81b_begin_of_the_end a owl:DatatypeProperty ;
+    rdfs:subPropertyOf crm:P81_ongoing_throughout ;
+    rdfs:domain crm:E52_Time-Span ;
+    rdfs:range rdfs:Literal .
+
+crm:P82_at_some_time_within a owl:DatatypeProperty ;
+    rdfs:domain crm:E52_Time-Span ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "v2: not written by the conversion; the outer bounds P82a/P82b are its subproperties."@en .
+
+crm:P82a_begin_of_the_begin a owl:DatatypeProperty ;
+    rdfs:subPropertyOf crm:P82_at_some_time_within ;
+    rdfs:domain crm:E52_Time-Span ;
+    rdfs:range rdfs:Literal .
+
+crm:P82b_end_of_the_end a owl:DatatypeProperty ;
+    rdfs:subPropertyOf crm:P82_at_some_time_within ;
+    rdfs:domain crm:E52_Time-Span ;
+    rdfs:range rdfs:Literal .
+
+crm:P90_has_value a owl:DatatypeProperty ;
+    rdfs:domain crm:E54_Dimension ;
+    rdfs:range rdfs:Literal ;
+    rdfs:comment "draft.2: domain restored to the official E54_Dimension (v1: E97_Monetary_Amount, which would make every measured dimension a monetary amount). E97 is a subclass of E54, so costs are unaffected."@en .
+
+#################################################################
+#    Annotation properties - dcterms
+#################################################################
+
+dcterms:source a owl:AnnotationProperty .
+
+#################################################################
+#    Classes - CIDOC CRM
+#################################################################
+
+# draft.2: direct superclasses exactly as in the official RDFS 7.1.3. Intermediate classes that are
+# not used in the data (e.g. E64, E19, E24, E28, E90) are referenced but not redeclared here.
+# Note: E12_Production is a subclass of E11_Modification, so :modifies_ship on a production is correct
+# (the 5 'violations' found in the v1 inventory of 2026-09-30 were artefacts of v1's shortened hierarchy).
+
+crm:E1_CRM_Entity a owl:Class .
+
+crm:E2_Temporal_Entity a owl:Class ;
+    rdfs:subClassOf crm:E1_CRM_Entity .
+
+crm:E4_Period a owl:Class ;
+    rdfs:subClassOf crm:E2_Temporal_Entity , crm:E92_Spacetime_Volume .
+
+crm:E5_Event a owl:Class ;
+    rdfs:subClassOf crm:E4_Period .
+
+crm:E6_Destruction a owl:Class ;
+    rdfs:subClassOf crm:E64_End_of_Existence ;
+    rdfs:comment "v2: breaking up by the Navy itself is the end of the career; see :BeingBrokenUp. A ship sold to a breaker ends its naval career with the sale (crm:E8_Acquisition); the later breaking up is outside the Navy's record (decision D1)."@en .
+
+crm:E7_Activity a owl:Class ;
+    rdfs:subClassOf crm:E5_Event .
+
+crm:E39_Actor a owl:Class ;
+    rdfs:subClassOf crm:E77_Persistent_Item ;
+    rdfs:comment "v2 (rules v1, 2026-10-07): buyers, recipients of loans and transfers, as named in the source (label only; not identified further)."@en .
+
+crm:E74_Group a owl:Class ;
+    rdfs:subClassOf crm:E39_Actor ;
+    rdfs:comment "v2 (rules v1, 2026-10-07): used for the Royal Navy (myData:royal_navy) as the party in sales, acquisitions and transfers of custody."@en .
+
+crm:E8_Acquisition a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity .
+
+crm:E10_Transfer_of_Custody a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity ;
+    rdfs:comment "v2 (decision F, 2026-10-01): transfer or loan to another department (e.g. Coastguard, War Department) is recorded with this class. Whether it ends the naval career is decided by the rules of the analysis layer, not here."@en .
+
+crm:E11_Modification a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity .
+
+crm:E12_Production a owl:Class ;
+    rdfs:subClassOf crm:E11_Modification , crm:E63_Beginning_of_Existence .
+
+crm:E13_Attribute_Assignment a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity .
+
+crm:E15_Identifier_Assignment a owl:Class ;
+    rdfs:subClassOf crm:E13_Attribute_Assignment ;
+    rdfs:comment "v2 (decision E, 2026-10-01): a renaming, or a naming stated in the source ('Named 30.10.1760'). The old name is crm:P38_deassigned, the new name crm:P37_assigned, the ship crm:P140_assigned_attribute_to. Ship names are treated as identifiers (crm:E42_Identifier) because they were assigned by the Admiralty and no two ships bore the same name at the same time; this is an interpretive choice and is stated as such."@en .
+
+crm:E16_Measurement a owl:Class ;
+    rdfs:subClassOf crm:E13_Attribute_Assignment ;
+    rdfs:comment "v2 (decision G-4): the measurement behind Winfield's 'As built' or 'Dimensions & tons'. Ship by crm:P39_measured, each dimension by crm:P40_observed_dimension. For a ship built for the Navy it is part of the crm:E12_Production (crm:P9_consists_of); for a captured or purchased ship Winfield gives the dimensions 'as measured upon its acquisition' (Glossary, 'Dimensions'), so it belongs to the acquisition."@en .
+
+crm:E22_Human-Made_Object a owl:Class ;
+    rdfs:subClassOf crm:E19_Physical_Object , crm:E24_Physical_Human-Made_Thing .
+
+crm:E41_Appellation a owl:Class ;
+    rdfs:subClassOf crm:E90_Symbolic_Object .
+
+crm:E42_Identifier a owl:Class ;
+    rdfs:subClassOf crm:E41_Appellation ;
+    rdfs:comment "v2: a ship name. The name string is its rdfs:label."@en .
+
+crm:E52_Time-Span a owl:Class ;
+    rdfs:subClassOf crm:E1_CRM_Entity .
+
+crm:E53_Place a owl:Class ;
+    rdfs:subClassOf crm:E1_CRM_Entity .
+
+crm:E54_Dimension a owl:Class ;
+    rdfs:subClassOf crm:E1_CRM_Entity .
+
+crm:E55_Type a owl:Class ;
+    rdfs:subClassOf crm:E28_Conceptual_Object .
+
+crm:E58_Measurement_Unit a owl:Class ;
+    rdfs:subClassOf crm:E55_Type .
+
+crm:E92_Spacetime_Volume a owl:Class ;
+    rdfs:subClassOf crm:E1_CRM_Entity .
+
+crm:E93_Presence a owl:Class ;
+    rdfs:subClassOf crm:E92_Spacetime_Volume .
+
+crm:E96_Purchase a owl:Class ;
+    rdfs:subClassOf crm:E8_Acquisition ;
+    rdfs:comment "v2 (decision G-3): a sale of a ship; the price by crm:P179_had_sales_price."@en .
+
+crm:E97_Monetary_Amount a owl:Class ;
+    rdfs:subClassOf crm:E54_Dimension .
+
+crm:E98_Currency a owl:Class ;
+    rdfs:subClassOf crm:E58_Measurement_Unit .
+
+#################################################################
+#    Classes - Sealit
+#################################################################
+
+sealit:Ship a owl:Class ;
+    rdfs:subClassOf crm:E22_Human-Made_Object .
+
+sealit:ShipRepair a owl:Class ;
+    rdfs:subClassOf crm:E11_Modification .
+
+#################################################################
+#    Classes - Custom (:warship)
+#################################################################
+
+# Subclasses of crm:E7_Activity
+:Capture a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity .
+
+:Commissioning a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity .
+
+:Decommissioning a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity .
+
+:Recommissioning a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity .
+
+# Subclasses of crm:E11_Modification
+:ShipConversion a owl:Class ;
+    rdfs:subClassOf crm:E11_Modification .
+
+:FittingForSea a owl:Class ;
+  rdfs:subClassOf :Fitting ;   # v2: 上位クラスを crm:E11_Modification から :Fitting に変更
+  rdfs:label "Fitting for sea"@en ;
+  rdfs:comment "Outfitting/modifications to prepare a ship for sea."@en ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty crm:P31_has_modified ;
+    owl:someValuesFrom sealit:Ship
+  ] .
+
+# Subclasses of crm:E55_Type
+:Investment a owl:Class ;
+    rdfs:subClassOf crm:E55_Type .
+
+:OperationalStatus a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:comment "v2: common superclass of the two axes, :ServiceStatus and :DockyardWork (decision A1)."@en .
+
+:ServiceStatus a owl:Class ;
+    rdfs:subClassOf :OperationalStatus ;
+    rdfs:label "Service status"@en ;
+    rdfs:comment "v2: the axis of status in service. Value of :has_service_status."@en .
+
+:DockyardWork a owl:Class ;
+    rdfs:subClassOf :OperationalStatus ;
+    rdfs:label "Dockyard work"@en ;
+    rdfs:comment "v2: the axis of dockyard work. Value of :has_work_status."@en .
+
+:PropulsionType a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:comment "Type classification based on the primary means of propulsion."@en .
+
+:ShipRating a owl:Class ;
+    rdfs:subClassOf crm:E55_Type .
+
+:ShipRole a owl:Class ;
+    rdfs:subClassOf crm:E55_Type .
+
+:ShipType a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:comment "Type classification based on the fundamental design and tactical role (e.g., Ship of the Line, Frigate, Sloop)."@en .
+
+# Subclasses of sealit:ShipRepair
+:GreatRepair a owl:Class ;
+    rdfs:subClassOf sealit:ShipRepair .
+
+:LargeRepair a owl:Class ;
+    rdfs:subClassOf sealit:ShipRepair .
+
+:MiddlingRepair a owl:Class ;
+    rdfs:subClassOf sealit:ShipRepair .
+
+:Refit a owl:Class ;
+    rdfs:subClassOf sealit:ShipRepair .
+
+:SmallRepair a owl:Class ;
+    rdfs:subClassOf sealit:ShipRepair .
+
+# Subclasses of :ShipConversion
+:ScrewConversion a owl:Class ;
+    rdfs:subClassOf :ShipConversion .
+
+#################################################################
+#    Individuals
+#################################################################
+
+# Individuals of :Investment
+:CombatCapabilityInvestment a owl:NamedIndividual , :Investment ;
+    rdfs:comment "Modification costs for frontline deployment (e.g., installation of the latest artillery, renewal of the propulsion system). Depending on the type of investment, this should be recorded concurrently with :incurred_cost."@en .
+:NonCombatDutyInvestment a owl:NamedIndividual , :Investment ;
+    rdfs:comment "Conversion costs for non-combat missions (e.g., hospital ship, training ship, accommodation ship). Depending on the type of investment, this should be recorded concurrently with :incurred_cost."@en .
+
+# Individuals of :ServiceStatus (v2: was :OperationalStatus in v1)
+:InCommission a owl:NamedIndividual , :ServiceStatus ;
+    rdfs:comment "Active Service: A state of being operational as part of the fleet, primarily engaging in combat duties, overseas deployments, or voyages."@en .
+:InOrdinary a owl:NamedIndividual , :ServiceStatus ;
+    rdfs:comment "Reserve Status: A state of being in storage or receiving only minimal maintenance. v2: may overlap with dockyard work (e.g. in Ordinary and under repair)."@en .
+:InNonCombatDuty a owl:NamedIndividual , :ServiceStatus ;
+    rdfs:comment "A state of being permanently stationed in a specific port or anchorage to engage in regular, non-combat duties, such as serving as a training ship, accommodation ship, guard ship, or various hulks."@en .
+:PaidOff a owl:NamedIndividual , :ServiceStatus ;
+    rdfs:comment "Post-Commission (Paid Off). v2 (decision B1, 2026-10-01): the status from the end of a commission until the next service status begins (In Ordinary, recommission, non-combat duty, sale, etc.). The crew has been discharged and the ship remains in Navy ownership. May overlap with dockyard work (paid off and under repair). When the source says 'Paid off into Ordinary', no paid-off interval is created; the ship goes directly In Ordinary."@en .
+:BeingBrokenUp a owl:NamedIndividual , :ServiceStatus ;
+    rdfs:label "Being broken up"@en ;
+    rdfs:comment "v2 (decision D1, 2026-10-01): breaking up by the Navy itself (e.g. 'BU at Chatham Dyd', 'BU completed 3.1866'), from its start to its completion. Terminal status of the service axis; does not overlap with dockyard work (checked by SHACL). Not used when the ship is sold to a breaker: the naval career then ends with the sale (crm:E8_Acquisition). v1 used this term without declaring it."@en .
+
+:InOtherCustody a owl:NamedIndividual , :ServiceStatus ;
+    rdfs:label "In other custody"@en ;
+    rdfs:comment "v2 (decision F, 2026-10-07): the ship is in the custody of a body outside the Navy after a loan or transfer (crm:E10_Transfer_of_Custody with :Loan or :Transfer), e.g. 'Lent to Metropolitan Asylums Board', 'To coastguard'. Starts with the transfer and ends with the return ('Returned to Admiralty', 'loan terminated') or with the next career event (e.g. sale). The status after a return is not inferred. Transfers to the coastguard are included in all periods; the Admiralty took over the coastguard in 1856, and any distinction by period is made in the analysis layer. Whether this status ends the naval career is decided in the analysis layer (decision F)."@en .
+
+# Individuals of :DockyardWork (v2: was :OperationalStatus in v1)
+:UnderRepair a owl:NamedIndividual , :DockyardWork ;
+    rdfs:comment "Under Repair: A state of being unable to undertake missions, such as being in dry dock. v2: on the dockyard work axis; may overlap with a service status (e.g. paid off, in Ordinary)."@en .
+:UnderFitting a owl:NamedIndividual , :DockyardWork ;
+    rdfs:comment "Fitting for Sea: A pre-commission (or re-commission) state in which a ship is being equipped and prepared for service—e.g., installing or restoring machinery, rigging, armament, and stores. Distinct from repair; the ship is not yet in commission but is being readied to become operational. v2: on the dockyard work axis."@en .
+:UnderRepairAndFitting a owl:NamedIndividual , :DockyardWork ;
+    rdfs:label "Under repair and fitting"@en ;
+    rdfs:comment "v2 (decision C1, 2026-10-01): repair and fitting stated together without a boundary in the source (e.g. 'Repaired and fitted at Plymouth 3.1825-8.1826'). The event carries both types (e.g. :SmallRepair and :FittingForSea); the source's single interval is not split. If the source gives the boundary, two Presences with :UnderRepair and :UnderFitting are made instead."@en .
+
+# Individuals of :PropulsionType
+:PaddleWheel a owl:NamedIndividual , :PropulsionType ; rdfs:label "Paddle Wheel Steam"@en .
+:Sailing a owl:NamedIndividual , :PropulsionType ; rdfs:label "Sailing"@en .
+:ScrewPropeller a owl:NamedIndividual , :PropulsionType ; rdfs:label "Screw Propeller Steam"@en .
+
+# Individuals of :ShipRating
+:FifthRate a owl:NamedIndividual , :ShipRating .
+:FirstRate a owl:NamedIndividual , :ShipRating .
+:FourthRate a owl:NamedIndividual , :ShipRating .
+:SecondRate a owl:NamedIndividual , :ShipRating .
+:SixthRate a owl:NamedIndividual , :ShipRating .
+:ThirdRate a owl:NamedIndividual , :ShipRating .
+
+# Individuals of :ShipRole
+:Advancedship a owl:NamedIndividual , :ShipRole ;
+    rdfs:comment "Definition not reproduced here for copyright reasons; see Winfield 2014, Glossary and Abbreviations."@en ;
+    dcterms:source "Winfield, Rif. British Warships in the Age of Sail, 1817–1863: Design, Construction, Careers and Fates."@en .
+:CoalHulk a owl:NamedIndividual , :ShipRole .
+:CoastGuardShip a owl:NamedIndividual , :ShipRole .
+:DemonstrationShip a owl:NamedIndividual , :ShipRole ;
+    rdfs:comment "A mobilised unit used to support a diplomatic démarche, fulfilling a deterrent role, although the term is imprecise."@en ;
+    dcterms:source "Winfield, Rif. British Warships in the Age of Sail, 1817–1863: Design, Construction, Careers and Fates."@en .
+:DepotShip a owl:NamedIndividual , :ShipRole .
+:DivisionalShip a owl:NamedIndividual , :ShipRole .
+:EngineersTrainingShip a owl:NamedIndividual , :ShipRole .
+:Flagship a owl:NamedIndividual , :ShipRole .
+:FloatingBarracks a owl:NamedIndividual , :ShipRole .
+:GuardShip a owl:NamedIndividual , :ShipRole .
+:GunneryTrainingShip a owl:NamedIndividual , :ShipRole .
+:HospitalShip a owl:NamedIndividual , :ShipRole .
+:Hulk a owl:NamedIndividual , :ShipRole .
+:Lazarette a owl:NamedIndividual , :ShipRole ;
+    rdfs:comment "Definition not reproduced here for copyright reasons; see Winfield 2014, Glossary and Abbreviations."@en ;
+    dcterms:source "Winfield, Rif. British Warships in the Age of Sail, 1817–1863: Design, Construction, Careers and Fates."@en .
+:PowderHulk a owl:NamedIndividual , :ShipRole ;
+    rdfs:comment "Definition not reproduced here for copyright reasons; see Winfield 2014, Glossary and Abbreviations."@en ;
+    dcterms:source "Winfield, Rif. British Warships in the Age of Sail, 1817–1863: Design, Construction, Careers and Fates."@en .
+:PowderMagazine a owl:NamedIndividual , :ShipRole .
+:PrisonShip a owl:NamedIndividual , :ShipRole .
+:ReceivingHulk a owl:NamedIndividual , :ShipRole .
+:ReceivingShip a owl:NamedIndividual , :ShipRole ;
+    rdfs:comment "Definition not reproduced here for copyright reasons; see Winfield 2014, Glossary and Abbreviations."@en ;
+    dcterms:source "Winfield, Rif. British Warships in the Age of Sail, 1817–1863: Design, Construction, Careers and Fates."@en .
+:SheerHulk a owl:NamedIndividual , :ShipRole ;
+    rdfs:comment "Definition not reproduced here for copyright reasons; see Winfield 2014, Glossary and Abbreviations."@en ;
+    dcterms:source "Winfield, Rif. British Warships in the Age of Sail, 1817–1863: Design, Construction, Careers and Fates."@en .
+:Tender a owl:NamedIndividual , :ShipRole .
+:TrainingShip a owl:NamedIndividual , :ShipRole .
+:TroopTransport a owl:NamedIndividual , :ShipRole .
+:TurretShip a owl:NamedIndividual , :ShipRole .
+:VictuallingDepot a owl:NamedIndividual , :ShipRole .
+:VictuallingVessel a owl:NamedIndividual , :ShipRole .
+
+# Individuals of :ShipType
+:BrigSloop a owl:NamedIndividual , :ShipType ; rdfs:label "Brig Sloop"@en .
+:CoastalDefenceShip a owl:NamedIndividual , :ShipType ; rdfs:label "Coastal Defence Ship"@en .
+:Cutter a owl:NamedIndividual , :ShipType ; rdfs:label "Cutter"@en .
+:Frigate a owl:NamedIndividual , :ShipType ; rdfs:label "Frigate"@en .
+:Gunboat a owl:NamedIndividual , :ShipType ; rdfs:label "Gunboat"@en .
+:Gunvessel a owl:NamedIndividual , :ShipType ; rdfs:label "Gunvessel"@en .
+:IronFrigate a owl:NamedIndividual , :ShipType ; rdfs:label "Iron Frigate"@en .
+:MiscShip a owl:NamedIndividual , :ShipType ; rdfs:label "Miscellaneous Vessel"@en .
+:PaddleFrigate a owl:NamedIndividual , :ShipType ; rdfs:label "Paddle Frigate"@en .
+:PaddleSloop a owl:NamedIndividual , :ShipType ; rdfs:label "Paddle Sloop"@en .
+:Schooner a owl:NamedIndividual , :ShipType ; rdfs:label "Schooner"@en .
+:ScrewSloop a owl:NamedIndividual , :ShipType ; rdfs:label "Screw Sloop"@en .
+:ShipOfTheLine a owl:NamedIndividual , :ShipType ; rdfs:label "Ship of the Line"@en .
+:Sloop a owl:NamedIndividual , :ShipType ; rdfs:label "Sloop"@en .
+:SteamPaddleVessel a owl:NamedIndividual , :ShipType ; rdfs:label "Steam Paddle Vessel"@en .
+:WoodenCruiser a owl:NamedIndividual , :ShipType ; rdfs:label "Wooden Cruiser"@en .
+
+# Individuals of crm:E98_Currency
+myData:currency_gbp a owl:NamedIndividual , crm:E98_Currency ; rdfs:label "GBP"@en .
+
+#################################################################
+#    v2 additions (2026-09-30, draft.1): production and first cost
+#    Design notes: phd_thesis/jinmoncom2026/docs/jinmoncom2026_rules_v0_header_report_20260930.md §5
+#################################################################
+
+# (draft.2: the CIDOC declarations formerly here — E4, P9, P17, P108 — moved to the CIDOC sections above,
+#  with the official domains/ranges.)
+
+crm:E12_Production rdfs:comment "v2: the time-span begins with the keel laying (K:) and ends with the first completion (C:). A missing date is left empty in the record layer; no substitution (e.g. launch date for completion) is made there."@en .
+
+# --- Events around production ---
+:Ordering a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity ;
+    rdfs:label "Ordering"@en ;
+    rdfs:comment "The Admiralty order to build the ship (Winfield 'Ord:'). Not part of the production; linked from crm:E12_Production by crm:P17_was_motivated_by."@en .
+
+:Reordering a owl:Class ;
+    rdfs:subClassOf :Ordering ;
+    rdfs:label "Re-ordering"@en ;
+    rdfs:comment "A renewed order, e.g. to a new design (Winfield 'Re-ord:')."@en .
+
+:Launching a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity ;
+    rdfs:label "Launching"@en ;
+    rdfs:comment "The launch or floating out of the hull (Winfield 'L:'). Part of crm:E12_Production (crm:P9_consists_of). Its date is the basis of ship age in the event history analysis."@en .
+
+:Fitting a owl:Class ;
+    rdfs:subClassOf crm:E11_Modification ;
+    rdfs:label "Fitting"@en ;
+    rdfs:comment "v2: generic fitting-out (v1 used this class 157 times without declaring it)."@en .
+
+:FittingForOrdinary a owl:Class ;
+    rdfs:subClassOf :Fitting ;
+    rdfs:label "Fitting for Ordinary"@en ;
+    rdfs:comment "Fitting-out to lay the ship up in Ordinary (Winfield 'for Ordinary')."@en .
+
+:Completion a owl:Class ;
+    rdfs:subClassOf :Fitting ;
+    rdfs:label "Completion"@en ;
+    rdfs:comment "The first completion (Winfield 'C:'), which ends crm:E12_Production and is part of it (crm:P9_consists_of). A single date or a period of fitting-out. Later 'C:' entries are recorded as :Fitting (or its subclasses), not as :Completion. May also be typed :FittingForSea or :FittingForOrdinary according to its stated purpose."@en .
+
+# --- First cost ---
+:CostComponent a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:comment "Kind of an amount in the first cost, as stated in the source. Sums are not recorded unless the source states a total; totals are computed in the analysis layer."@en .
+
+:HullCost a owl:NamedIndividual , :CostComponent ; rdfs:label "hull"@en .
+:MachineryCost a owl:NamedIndividual , :CostComponent ; rdfs:label "machinery"@en .
+:FittingCost a owl:NamedIndividual , :CostComponent ; rdfs:label "fitting"@en .
+:BuildCost a owl:NamedIndividual , :CostComponent ; rdfs:label "building (to builder / contractor)"@en .
+:SuppliesCost a owl:NamedIndividual , :CostComponent ; rdfs:label "Admiralty supplies"@en .
+:StatedTotalCost a owl:NamedIndividual , :CostComponent ; rdfs:label "total, as stated in the source"@en .
+:UnspecifiedCost a owl:NamedIndividual , :CostComponent ; rdfs:label "kind not stated or not recognised by the rules"@en .
+
+# --- Provenance of deterministic conversion ---
+:generated_by_rule a owl:AnnotationProperty ;
+    rdfs:comment "Space-separated IDs of the deterministic rules that produced this node (see the rule list in scripts/extract_header_v0.py). Nodes produced by an LLM carry a different marker."@en .
+
+:source_text a owl:AnnotationProperty ;
+    rdfs:comment "The source string (Winfield, after the OCR normalisation rules) from which this node was produced."@en .
+
+#################################################################
+#    v2 additions (2026-10-05, draft.2): dimensions and tonnage (for rules v0.1)
+#    Definitions from Winfield 2014, 'Glossary and Abbreviations', entries 'Dimensions' and 'Tons'
+#    (checked against the page images of phd_thesis/sources/prev_works/Winfield_1_firstRate.pdf, PDF pp. 2, 4).
+#    Units and the numeric form of values (feet and inches, ninety-fourths of a ton) are decided with rules v0.1.
+#    Not yet defined (not in the glossary): 'oa' attached to a breadth, 'disp.' (displacement), and entries with
+#    four values separated by 'x'; their handling is decided and recorded with rules v0.1.
+#################################################################
+
+:DimensionKind a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:label "Kind of dimension"@en ;
+    rdfs:comment "Kind of a crm:E54_Dimension observed in a crm:E16_Measurement (value of crm:P2_has_type on the dimension)."@en .
+
+:GundeckLength a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "length on the gundeck"@en ;
+    rdfs:comment "Definition not reproduced here for copyright reasons; see Winfield 2014, Glossary and Abbreviations."@en ;
+    dcterms:source "Winfield 2014, Glossary and Abbreviations, s.v. 'Dimensions' (Length)."@en .
+
+:KeelLengthForTonnage a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "length of the keel for tonnage"@en ;
+    rdfs:comment "Definition not reproduced here for copyright reasons; see Winfield 2014, Glossary and Abbreviations."@en ;
+    dcterms:source "Winfield 2014, Glossary and Abbreviations, s.v. 'Dimensions' (Length)."@en .
+
+:BreadthForTonnage a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "breadth for tonnage"@en ;
+    rdfs:comment "Definition not reproduced here for copyright reasons; see Winfield 2014, Glossary and Abbreviations."@en ;
+    dcterms:source "Winfield 2014, Glossary and Abbreviations, s.v. 'Dimensions' (Breadth)."@en .
+
+:DepthInHold a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "depth in hold"@en ;
+    rdfs:comment "Definition not reproduced here for copyright reasons; see Winfield 2014, Glossary and Abbreviations."@en ;
+    dcterms:source "Winfield 2014, Glossary and Abbreviations, s.v. 'Dimensions' (Depth)."@en .
+
+:DraughtForward a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "draught forward (light, at completion)"@en ;
+    rdfs:comment "The first value of 'Draught forwards/aft': the light draught at the ship's completion; fully laden the ship drew considerably more."@en ;
+    dcterms:source "Winfield 2014, Glossary and Abbreviations, s.v. 'Dimensions' (Draught)."@en .
+
+:DraughtAft a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "draught aft (light, at completion)"@en ;
+    rdfs:comment "The second value of 'Draught forwards/aft': the light draught at the ship's completion."@en ;
+    dcterms:source "Winfield 2014, Glossary and Abbreviations, s.v. 'Dimensions' (Draught)."@en .
+
+:BuildersMeasurement a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "tons Builder's Measurement (bm)"@en ;
+    rdfs:comment "Tonnage by Builder's Measurement, k x b x (b/2) / 94 with k the keel length for tonnage and b the breadth for tonnage; hence fractions in ninety-fourths. A measure of volume (capacity of the hull), not of weight; displacement is a later introduction."@en ;
+    dcterms:source "Winfield 2014, Glossary and Abbreviations, s.v. 'Tons'."@en .
+
+# --- draft.2 (2026-10-05, rules v0.1): kinds outside the glossary's four dimensions ---
+:MouldedBreadth a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "moulded breadth"@en ;
+    rdfs:comment "Breadth marked 'mid.' (moulded) in the source, e.g. '39ft 7in (39ft 0in mid)'."@en ;
+    dcterms:source "Winfield 2014, Glossary and Abbreviations, s.v. 'Mld.'"@en .
+
+:BreadthMarkedOA a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "breadth marked 'oa'"@en ;
+    rdfs:comment "A breadth the source marks 'oa', usually beside a breadth 'for tonnage' (e.g. '37ft 6in oa (37ft 0in for tonnage)'). 'oa' is not defined in the glossary; presumably overall (extreme) breadth, but this is not asserted in the record layer."@en .
+
+:BreadthUnlabelled a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "breadth, kind not stated"@en ;
+    rdfs:comment "A second breadth given without a label (e.g. the outer value of '24ft 8¼in (24ft 6¼in for tons)', or a value in parentheses without a word). Its kind is not stated in the source."@en .
+
+:LengthUnspecified a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "length, kind not stated"@en ;
+    rdfs:comment "Only one length is given, so whether it is the length on the gundeck or the keel length for tonnage is not stated."@en .
+
+:Displacement a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "displacement (tons)"@en ;
+    rdfs:comment "Displacement tonnage (weight), e.g. '1,960 disp.'. Not the Builder's Measurement."@en ;
+    dcterms:source "Winfield 2014, Glossary and Abbreviations, s.v. 'Tons' (displacement tonnages 'are given herein for reference purposes for later steam vessels')."@en .
+
+# --- occasions of a measurement (the heading in the source) ---
+:MeasurementOccasion a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:comment "The heading under which Winfield gives the dimensions (value of crm:P2_has_type on a crm:E16_Measurement)."@en .
+:AsBuilt a owl:NamedIndividual , :MeasurementOccasion ; rdfs:label "As built"@en ;
+    rdfs:comment "Actual measured dimensions of the individual vessel; for an acquired vessel, as measured upon its acquisition (Glossary, 'Dimensions')."@en .
+:DimensionsAndTons a owl:NamedIndividual , :MeasurementOccasion ; rdfs:label "Dimensions & tons"@en ;
+    rdfs:comment "Heading mostly used for purchased or captured vessels. The time of measurement is not stated."@en .
+:AsCompleted a owl:NamedIndividual , :MeasurementOccasion ; rdfs:label "Tonnage as completed"@en .
+:AsLengthened a owl:NamedIndividual , :MeasurementOccasion ; rdfs:label "As lengthened"@en .
+:AsConverted a owl:NamedIndividual , :MeasurementOccasion ; rdfs:label "As converted"@en .
+
+# --- record-layer values of a dimension (decision 2026-10-05: feet and inches kept separately) ---
+:value_feet a owl:DatatypeProperty ;
+    rdfs:domain crm:E54_Dimension ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Feet part of a length as written in the source. Feet and inches are recorded separately in the record layer; conversion (e.g. to decimal feet) is done in the analysis layer."@en .
+
+:value_inches a owl:DatatypeProperty ;
+    rdfs:domain crm:E54_Dimension ;
+    rdfs:range xsd:decimal ;
+    rdfs:comment "Inches part of a length, with fractions as decimals (½ = 0.5, ⅛ = 0.125). Less than 12."@en .
+
+:tons_bm_whole a owl:DatatypeProperty ;
+    rdfs:domain crm:E54_Dimension ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Whole tons of a Builder's Measurement."@en .
+
+:tons_bm_ninety_fourths a owl:DatatypeProperty ;
+    rdfs:domain crm:E54_Dimension ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Numerator of the fraction of a ton in ninety-fourths (0-93). Absent when the source's fraction is unreadable."@en .
+
+:value_status a owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:comment "How the value was obtained: 'parsed' (rules read the source as written, possibly after a unique OCR repair), 'formula_resolved' (rule F2: an unclear OCR reading chosen by the Builder's Measurement formula; to be checked against the page image), 'visually_confirmed', 'visually_corrected' (checked against the page image by a person), 'needs_review' (not determined; only the readable part is recorded)."@en .
+
+:DimensionUnlabelled a owl:NamedIndividual , :DimensionKind ;
+    rdfs:label "dimension, kind not stated"@en ;
+    rdfs:comment "Definition not reproduced here for copyright reasons; see Winfield 2014, Glossary and Abbreviations."@en .
+
+# --- draft.2 (2026-10-05): kinds of transfer of custody (decision F', decisions memo §5) ---
+:CustodyTransferType a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:comment "Kind of a crm:E10_Transfer_of_Custody (value of crm:P2_has_type), as the scope note of E10 recommends for distinguishing kinds of transfer. CIDOC CRM has no class or property for loans; it models legal ownership (crm:E8_Acquisition) and physical custody (crm:E10_Transfer_of_Custody) separately."@en .
+:Loan a owl:NamedIndividual , :CustodyTransferType ;
+    rdfs:label "loan"@en ;
+    rdfs:comment "Winfield 'lent to ...': custody passes, ownership stays with the Navy. No crm:E8_Acquisition is recorded."@en .
+:Transfer a owl:NamedIndividual , :CustodyTransferType ;
+    rdfs:label "transfer"@en ;
+    rdfs:comment "Winfield 'transferred to ...' (mostly to another government department, i.e. within Crown property). Recorded as a transfer of custody; a crm:E8_Acquisition is added only when the source makes a change of owner explicit (e.g. sale, gift)."@en .
+
+# --- draft.2 (2026-10-05, rules v1): command appointment (decision B1) ---
+:BreakingUpOrder a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity ;
+    rdfs:label "Order to break up"@en ;
+    rdfs:comment "v2 (rules v1, 2026-10-07): the Admiralty Order to break a ship up ('BU (by AO 23.5.1871) completed 3.3.1875'). The date of the order is not the date of the breaking up; the breaking up (crm:E6_Destruction) is linked to the order by crm:P17_was_motivated_by, as the production is linked to its :Ordering. When the source gives only the completion, the breaking up has an end and no beginning."@en .
+
+:SaleOrder a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity ;
+    rdfs:label "Order to sell"@en ;
+    rdfs:comment "v2 (rules v1, round 2, 2026-10-07): the Admiralty Order to sell a ship ('Sold (by AO 20.4.1827) at Bombay ... 6.4.1829'). The date of the order is not the date of the sale; the sale (crm:E96_Purchase) is linked to the order by crm:P17_was_motivated_by, as the breaking up is linked to its :BreakingUpOrder. When the source gives only the order ('Sold by AO 27.7.1847'), the sale has no date."@en .
+
+:CommandAppointment a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity ;
+    rdfs:label "Command appointment"@en ;
+    rdfs:comment "An officer taking command of the ship, as stated in the source ('On 1.7.1865 under Capt. ...', 'then 7.1.1881 under Capt. ...'). Recorded as written; it does not change the service status, and no commissioning is inferred from it, even after paying off (decision B1, 2026-10-05). The officer's name is kept as text (:officer_text); persons are not identified."@en .
+
+:review_note a owl:DatatypeProperty ;
+    rdfs:label "review note"@en ;
+    rdfs:comment "v2 (2026-10-07): why a node needs to be checked against the source by a person (adjudication of v1 and v2, §11.5): an event the rules could not read fully, a Presence derived by rule B1r (F2), a status assumed to continue through a long silence of the source (F1, rule P2), a name possibly garbled by OCR. The value is a short explanation; the node itself is not changed."@en .
+
+:officer_text a owl:DatatypeProperty ;
+    rdfs:domain :CommandAppointment ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The officer as written in the source, e.g. 'Capt. Frederick Anstruther Herbert'."@en .
+
+# --- draft.3 (2026-10-09): station deployment (decision of 10/9) ---
+:StationDeployment a owl:Class ;
+    rdfs:subClassOf crm:E7_Activity ;
+    rdfs:label "Station deployment"@en ;
+    rdfs:comment "v2 (2026-10-09): the station or sea area a ship was sent to, as stated with a commissioning or a command appointment ('Commissioned ... for the Channel squadron, later to the Mediterranean', 'on 1.7.1865 under Capt. ..., in the Mediterranean'). The station is a crm:E53_Place distinct from the place of the commissioning (crm:P7 of the commissioning). The label of the place is the wording of the source; grouping the wordings into historical stations is a separate table, not part of the graph. Several deployments stated in one sentence are ordered by :station_order ('then', 'later'); deployments of the same order are simultaneous ('for the Downs and North Sea'). 'On same station' is resolved to the previous deployment of the ship and marked with :review_note. Purposes alone (Naval Review, Spanish Armament, surveying), destinations of a voyage, the names of squadrons that are not sea areas (Flying Squadron), and the posts of coastguard ships and mail packets (roles, recorded as the role of the ship; decision of 10/9) are not recorded."@en .
+
+:has_station_deployment a owl:ObjectProperty ;
+    rdfs:domain crm:E7_Activity ;
+    rdfs:range :StationDeployment ;
+    rdfs:label "has station deployment"@en ;
+    rdfs:comment "From the commissioning or command appointment that states the station, to the deployment."@en .
+
+:station_order a owl:DatatypeProperty ;
+    rdfs:domain :StationDeployment ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "Order of the deployments stated in one sentence (1 = the first station; 'then' / 'later' starts the next)."@en .
+
+:StationType a owl:Class ;
+    rdfs:subClassOf crm:E55_Type ;
+    rdfs:label "Station type"@en .
+:SeaStation a owl:NamedIndividual , :StationType ;
+    rdfs:label "sea station or area"@en ;
+    rdfs:comment "A naval station or sea area ('Mediterranean', 'west coast of Africa', 'the Downs')."@en .

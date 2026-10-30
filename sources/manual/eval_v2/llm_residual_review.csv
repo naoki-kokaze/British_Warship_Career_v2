@@ -1,0 +1,15 @@
+key,ship,clause_no,runs,llm_kind,llm_role,llm_date_text,effect_by_table,verdict,kind,role,date_text,new_name,reason,decided
+SM_9036|7|loss|65569a58,SM_9036,7,1,loss,,15.5.1854,,,loss,,15.5.1854,,,
+AIF_9007|3|fitting|47df02de,AIF_9007,3,1,fitting,,1868-69,,,fitting,,1868-69,,,
+PSPV_9035|3|rating_change|e4aff8f6,PSPV_9035,3,1,rating_change,,,,,rating_change,,,,,
+PSPV_9035|14|role|a7a96b7c,PSPV_9035,14,1,role,harbour tender/tug,7.1853,role_not_in_table,,role,harbour tender/tug,7.1853,,,
+PSPV_9035|16|role|4faa0448,PSPV_9035,16,1,role,harbour service,1870,role_not_in_table,,role,harbour service,1870,,,
+PSPV_9059|1|conversion|4578bb66,PSPV_9059,1,1,conversion,,1835,,,conversion,,1835,,,
+SBS_9113|14|role|074f09ce,SBS_9113,14,1,role,coastguard,9.1838,role_not_in_table,,role,coastguard,9.1838,,,
+SCS_9017|2|repair|0dc08723,SCS_9017,2,1,repair,,2 -4.1815,,,repair,,2 -4.1815,,,
+SCS_9033|3|conversion|e0b6078c,SCS_9033,3,1,conversion,,5.1826,,,conversion,,5.1826,,,
+SF5_9079|2|acquisition|51792050,SF5_9079,2,1,acquisition,,,,,acquisition,,,,,
+SF5_9079|32|in_ordinary|f94c5078,SF5_9079,32,1,in_ordinary,,,,,in_ordinary,,,,,
+SL3_9001|22|repair|2e60823e,SL3_9001,22,1,repair,,10-11.1795,,,repair,,10-11.1795,,,
+SL4_9004|16|loss|cc86e3e4,SL4_9004,16,1,loss,,17.8.1798,,,loss,,17.8.1798,,,
+SM_9052|5|breaking_up|d3ab95a7,SM_9052,5,1,breaking_up,,10.186610.11.1866,,modify,breaking_up,,10.1866–10.11.1866,,OCR: page image checked by kokaze. OCR 'SU at Woolwich 10.186610.11.1866.' -> 'BU at Woolwich 10.1866–10.11.1866.',2026-10-14

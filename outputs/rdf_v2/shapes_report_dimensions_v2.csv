@@ -1,0 +1,134 @@
+﻿severity,shape,focus_node,message
+Info,NeedsReview,dimension_PM_0028_1_DepthInHold,DM5: value not determined by the rules (needs review): 14ft 6in
+Info,NeedsReview,dimension_PM_0028_1_DimensionUnlabelled,DM5: value not determined by the rules (needs review): 28ft 3in
+Info,NeedsReview,dimension_SBS_0092_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 73ft 63/ain
+Info,NeedsReview,dimension_SBS_0135_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 69ft 73/ ain
+Info,NeedsReview,dimension_SBS_0136_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 70ft 1 3/ain
+Info,NeedsReview,dimension_SBS_0156_1_BreadthUnlabelled,DM5: value not determined by the rules (needs review): 24ft ?in
+Info,NeedsReview,dimension_SBS_0161_1_DraughtAft,DM5: value not determined by the rules (needs review): 9ft Sin
+Info,NeedsReview,dimension_SBS_0198_1_BuildersMeasurement,DM5: value not determined by the rules (needs review): 2329194bm
+Info,NeedsReview,dimension_SBS_0200_1_BuildersMeasurement,DM5: value not determined by the rules (needs review): 233\4bm
+Info,NeedsReview,dimension_SBS_0216_1_GundeckLength,DM5: value not determined by the rules (needs review): 90ft Sin
+Info,NeedsReview,dimension_SBS_0223_1_GundeckLength,DM5: value not determined by the rules (needs review): 1 00ft ?in
+Info,NeedsReview,dimension_SBS_0233_1_DepthInHold,DM5: value not determined by the rules (needs review): 1 4ft ?in
+Info,NeedsReview,dimension_SBS_0234_1_DepthInHold,DM5: value not determined by the rules (needs review): 14ft ?in
+Info,NeedsReview,dimension_SBS_0234_1_GundeckLength,DM5: value not determined by the rules (needs review): 95ft Sin
+Info,NeedsReview,dimension_SBS_0234_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 75ft 23/ain
+Info,NeedsReview,dimension_SC6_0028_1_BuildersMeasurement,DM5: value not determined by the rules (needs review): 427\4bm
+Info,NeedsReview,dimension_SC6_0036_1_BreadthForTonnage,DM5: value not determined by the rules (needs review): 32ft 83/sin
+Info,NeedsReview,dimension_SC6_0036_1_GundeckLength,DM5: value not determined by the rules (needs review): 126ft ?in
+Info,NeedsReview,dimension_SC6_0036_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 105ft 51/ sin
+Info,NeedsReview,dimension_SC6_0059_1_BreadthMarkedOA,DM5: value not determined by the rules (needs review): 31 ft 11 %in oa
+Info,NeedsReview,dimension_SC6_0070_1_DraughtAft,DM5: value not determined by the rules (needs review): 13ft ?in
+Info,NeedsReview,dimension_SC6_0081_1_BuildersMeasurement,DM5: value not determined by the rules (needs review): 923\4bm
+Info,NeedsReview,dimension_SC6_0084_1_DraughtAft,DM5: value not determined by the rules (needs review): 13ft ?in
+Info,NeedsReview,dimension_SCS_0009_1_BreadthForTonnage,DM5: value not determined by the rules (needs review): 22ft Sin
+Info,NeedsReview,dimension_SCS_0009_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 68ft 03/ain
+Info,NeedsReview,dimension_SCS_0042_1_BreadthForTonnage,DM5: value not determined by the rules (needs review): 19ft ?7in
+Info,NeedsReview,dimension_SCS_0073_1_BreadthUnlabelled,DM5: value not determined by the rules (needs review): 23ft Qin
+Info,NeedsReview,dimension_SCS_0073_1_DraughtAft,DM5: value not determined by the rules (needs review): 9ft Sin
+Info,NeedsReview,dimension_SF5_0012_1_DepthInHold,DM5: value not determined by the rules (needs review): 13ft Sin
+Info,NeedsReview,dimension_SF5_0012_1_GundeckLength,DM5: value not determined by the rules (needs review): 1 42ft Sin
+Info,NeedsReview,dimension_SF5_0018_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 123ft ?¾in
+Info,NeedsReview,dimension_SF5_0026_1_DepthInHold,DM5: value not determined by the rules (needs review): 12ft Sin
+Info,NeedsReview,dimension_SF5_0042_1_BuildersMeasurement,DM5: value not determined by the rules (needs review): 944\4bm
+Info,NeedsReview,dimension_SF5_0042_1_GundeckLength,DM5: value not determined by the rules (needs review): 1 45ft 0%in
+Info,NeedsReview,dimension_SF5_0059_1_DraughtAft,DM5: value not determined by the rules (needs review): 1 4ft Sin
+Info,NeedsReview,dimension_SF5_0063_1_DepthInHold,DM5: value not determined by the rules (needs review): 13ft ?in
+Info,NeedsReview,dimension_SF5_0069_1_BuildersMeasurement,"DM5: value not determined by the rules (needs review): 1,087\4bm"
+Info,NeedsReview,dimension_SF5_0094_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 126ft 51/ sin
+Info,NeedsReview,dimension_SF5_0156_1_DraughtAft,DM5: value not determined by the rules (needs review): 1 4ft ?in
+Info,NeedsReview,dimension_SF5_0163_1_BuildersMeasurement,"DM5: value not determined by the rules (needs review): 1,634\4bm"
+Info,NeedsReview,dimension_SF5_0165_1_DraughtAft,DM5: value not determined by the rules (needs review): 16ft ?in
+Info,NeedsReview,dimension_SF5_0168_1_BreadthMarkedOA,DM5: value not determined by the rules (needs review): 46ft S¾in oa
+Info,NeedsReview,dimension_SF5_0168_1_GundeckLength,DM5: value not determined by the rules (needs review): 1 64ft ?¼in
+Info,NeedsReview,dimension_SF5_0170_1_BreadthForTonnage,DM5: value not determined by the rules (needs review): 39ft S½in for tonnage
+Info,NeedsReview,dimension_SF5_0170_1_DepthInHold,DM5: value not determined by the rules (needs review): 1 3ft ?in
+Info,NeedsReview,dimension_SL1_0009_1_DraughtAft,DM5: value not determined by the rules (needs review): 17ft Sin
+Info,NeedsReview,dimension_SL1_0018_1_BreadthMarkedOA,DM5: value not determined by the rules (needs review): 54ft ?in oa.
+Info,NeedsReview,dimension_SL1_0018_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 170ft 91/sin
+Info,NeedsReview,dimension_SL2_0005_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 159ft ?in
+Info,NeedsReview,dimension_SL2_0014_1_GundeckLength,DM5: value not determined by the rules (needs review): 196ft S½in
+Info,NeedsReview,dimension_SL2_0065_1_DraughtAft,DM5: value not determined by the rules (needs review): 19ft Sin
+Info,NeedsReview,dimension_SL3_0051_1_DraughtAft,DM5: value not determined by the rules (needs review): 18ft Sin
+Info,NeedsReview,dimension_SL3_0056_1_GundeckLength,DM5: value not determined by the rules (needs review): 172ft 5%in
+Info,NeedsReview,dimension_SL3_0072_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 145ft 01/ sin
+Info,NeedsReview,dimension_SL3_0088_1_BreadthForTonnage,DM5: value not determined by the rules (needs review): 67ft ?½in
+Info,NeedsReview,dimension_SL3_0088_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 145ft 51/ ain
+Info,NeedsReview,dimension_SL3_0089_1_DraughtAft,DM5: value not determined by the rules (needs review): 1 ?ft 6in
+Info,NeedsReview,dimension_SL3_0092_1_GundeckLength,DM5: value not determined by the rules (needs review): 176ft Sin
+Info,NeedsReview,dimension_SL3_0107_1_BreadthUnlabelled,DM5: value not determined by the rules (needs review): 48ft Sin
+Info,NeedsReview,dimension_SL3_0107_1_DraughtAft,DM5: value not determined by the rules (needs review): 17ft ?in
+Info,NeedsReview,dimension_SL3_0109_1_DepthInHold,DM5: value not determined by the rules (needs review): 20ft ?in
+Info,NeedsReview,dimension_SL3_0109_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 148ft 11 %in
+Info,NeedsReview,dimension_SL3_0151_1_DraughtAft,DM5: value not determined by the rules (needs review): 17ft Sin
+Info,NeedsReview,dimension_SL4_0011_1_BuildersMeasurement,"DM5: value not determined by the rules (needs review): 1, 173\4bm"
+Info,NeedsReview,dimension_SL4_0011_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 127ft 33/ain
+Info,NeedsReview,dimension_SL4_0016_1_GundeckLength,DM5: value not determined by the rules (needs review): 1 69ft Sin
+Info,NeedsReview,dimension_SL4_0025_1_BreadthForTonnage,DM5: value not determined by the rules (needs review): 44ft Sin
+Info,NeedsReview,dimension_SL4_0025_1_GundeckLength,DM5: value not determined by the rules (needs review): 176ft Sin
+Info,NeedsReview,dimension_SL4_0025_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 149ft S¾in
+Info,NeedsReview,dimension_SL4_0047_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 1 44ft 63/ sin
+Info,NeedsReview,dimension_SL4_0059_1_BreadthForTonnage,DM5: value not determined by the rules (needs review): 47ft ?¼in for tonnage
+Info,NeedsReview,dimension_SL4_0069_1_BreadthForTonnage,DM5: value not determined by the rules (needs review): 49ft ?in for tonnage
+Info,NeedsReview,dimension_SL4_0069_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 203ft 5%in
+Info,NeedsReview,dimension_SL4_0071_1_BreadthForTonnage,DM5: value not determined by the rules (needs review): 49ft ?in for tonnage
+Info,NeedsReview,dimension_SL4_0071_1_DepthInHold,DM5: value not determined by the rules (needs review): 1 8ft Sin
+Info,NeedsReview,dimension_SL4_0080_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 145ft ?¼in
+Info,NeedsReview,dimension_SL4_0094_1_BreadthMarkedOA,DM5: value not determined by the rules (needs review): 51ft Sin oa
+Info,NeedsReview,dimension_SL4_0094_1_DraughtAft,DM5: value not determined by the rules (needs review): 23ft Sin
+Info,NeedsReview,dimension_SL4_0094_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 220ft 21/ain
+Info,NeedsReview,dimension_SM_0017_1_BreadthForTonnage,DM5: value not determined by the rules (needs review): 23ft ?in
+Info,NeedsReview,dimension_SM_0043_1_BreadthUnlabelled,DM5: value not determined by the rules (needs review): 18ft Sin
+Info,NeedsReview,dimension_SM_0043_1_KeelLengthForTonnage,DM5: value not determined by the rules (needs review): 44ft Sin
+Info,NeedsReview,dimension_SM_0103_1_DepthInHold,DM5: value not determined by the rules (needs review): 6ft ?in
+Info,NeedsReview,dimension_SM_0103_1_LengthUnspecified,DM5: value not determined by the rules (needs review): 59ft 1 Oin
+Info,NeedsReview,dimension_SSL_0004_1_DepthInHold,DM5: value not determined by the rules (needs review): 8ft ?in
+Info,NeedsReview,dimension_SSL_0010_1_GundeckLength,DM5: value not determined by the rules (needs review): 108ft 4%in
+Info,NeedsReview,dimension_SSL_0015_1_GundeckLength,DM5: value not determined by the rules (needs review): 121ft ?in
+Warning,BuildersMeasurementFormula,measurement_PF_0003_1,"DM3: tons bm (1210.297872340425531914893617) differs from k x b x (b/2) / 94 (1202.950608562352245862884161) by more than 0.5% (OCR error, approximate value, or a different tonnage rule)"
+Warning,BuildersMeasurementFormula,measurement_PM_0068_1,"DM3: tons bm (220) differs from k x b x (b/2) / 94 (96.17819148936170212765957447) by more than 0.5% (OCR error, approximate value, or a different tonnage rule)"
+Warning,BuildersMeasurementFormula,measurement_PSPV_0038_1,"DM3: tons bm (223) differs from k x b x (b/2) / 94 (229.9763593380614657210401890) by more than 0.5% (OCR error, approximate value, or a different tonnage rule)"
+Warning,BuildersMeasurementFormula,measurement_PSPV_0044_1,"DM3: tons bm (237) differs from k x b x (b/2) / 94 (233.6030585106382978723404255) by more than 0.5% (OCR error, approximate value, or a different tonnage rule)"
+Warning,BuildersMeasurementFormula,measurement_SBS_0096_1,"DM3: tons bm (237) differs from k x b x (b/2) / 94 (238.3141499211977935382190702) by more than 0.5% (OCR error, approximate value, or a different tonnage rule)"
+Warning,BuildersMeasurementFormula,measurement_SBS_0156_1,"DM3: tons bm (237.2021276595744680851063830) differs from k x b x (b/2) / 94 (240.4362117686170212765957447) by more than 0.5% (OCR error, approximate value, or a different tonnage rule)"
+Warning,BuildersMeasurementFormula,measurement_SCS_0077_1,"DM3: tons bm (169) differs from k x b x (b/2) / 94 (166.3918439716312056737588652) by more than 0.5% (OCR error, approximate value, or a different tonnage rule)"
+Warning,BuildersMeasurementFormula,measurement_SL2_0077_1,"DM3: tons bm (2783) differs from k x b x (b/2) / 94 (2880.815455082742316784869977) by more than 0.5% (OCR error, approximate value, or a different tonnage rule)"
+Warning,BuildersMeasurementFormula,measurement_SM_0044_1,"DM3: tons bm (202) differs from k x b x (b/2) / 94 (205.3896436277950157604412924) by more than 0.5% (OCR error, approximate value, or a different tonnage rule)"
+Warning,FormulaResolvedNotChecked,dimension_SBS_0051_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 77ft 71/sin"
+Warning,FormulaResolvedNotChecked,dimension_SBS_0151_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 73ft ?½in"
+Warning,FormulaResolvedNotChecked,dimension_SBS_0161_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 24ft ?in for tons"
+Warning,FormulaResolvedNotChecked,dimension_SBS_0161_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 73ft Sin"
+Warning,FormulaResolvedNotChecked,dimension_SBS_0164_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 24ft ?in for tons"
+Warning,FormulaResolvedNotChecked,dimension_SBS_0216_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 7 1 ft 31/sin"
+Warning,FormulaResolvedNotChecked,dimension_SBS_0223_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 78ft ?¾in"
+Warning,FormulaResolvedNotChecked,dimension_SBS_0240_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 7 4ft 93/ain"
+Warning,FormulaResolvedNotChecked,dimension_SBS_0271_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 81ft ?in"
+Warning,FormulaResolvedNotChecked,dimension_SC6_0009_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 29ft ?in"
+Warning,FormulaResolvedNotChecked,dimension_SC6_0009_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 91 ft 1 %in"
+Warning,FormulaResolvedNotChecked,dimension_SC6_0017_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 29ft ?½in"
+Warning,FormulaResolvedNotChecked,dimension_SC6_0037_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 30ft Sin"
+Warning,FormulaResolvedNotChecked,dimension_SC6_0055_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 94ft 8%in"
+Warning,FormulaResolvedNotChecked,dimension_SC6_0059_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 31ft ?%in for tonnage"
+Warning,FormulaResolvedNotChecked,dimension_SC6_0064_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 105ft 9%in"
+Warning,FormulaResolvedNotChecked,dimension_SC6_0093_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 182ft ?¾in"
+Warning,FormulaResolvedNotChecked,dimension_SCS_0015_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 24ft Sin"
+Warning,FormulaResolvedNotChecked,dimension_SF5_0069_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 39ft Sin"
+Warning,FormulaResolvedNotChecked,dimension_SF5_0072_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 118ft ?%in"
+Warning,FormulaResolvedNotChecked,dimension_SF5_0091_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 40ft 2%in"
+Warning,FormulaResolvedNotChecked,dimension_SF5_0117_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 125ft 11/ain"
+Warning,FormulaResolvedNotChecked,dimension_SF5_0156_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 40ft ?in for tonnage"
+Warning,FormulaResolvedNotChecked,dimension_SF5_0156_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 133ft 1 0%in"
+Warning,FormulaResolvedNotChecked,dimension_SF5_0163_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 130ft 93/ sin"
+Warning,FormulaResolvedNotChecked,dimension_SL1_0008_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 1 50ft 91/sin"
+Warning,FormulaResolvedNotChecked,dimension_SL1_0015_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 152ft 3%in"
+Warning,FormulaResolvedNotChecked,dimension_SL1_0016_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 164ft 01/sin"
+Warning,FormulaResolvedNotChecked,dimension_SL2_0014_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 51 ft S½in"
+Warning,FormulaResolvedNotChecked,dimension_SL3_0080_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 145ft 01/ ain"
+Warning,FormulaResolvedNotChecked,dimension_SL3_0151_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 145ft 5%in"
+Warning,FormulaResolvedNotChecked,dimension_SL4_0011_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 41 ft ?½in"
+Warning,FormulaResolvedNotChecked,dimension_SL4_0016_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 43ft Sin"
+Warning,FormulaResolvedNotChecked,dimension_SM_0002_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 27ft 3%in"
+Warning,FormulaResolvedNotChecked,dimension_SM_0033_1_BreadthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 24ft ?in"
+Warning,FormulaResolvedNotChecked,dimension_SSL_0004_1_BuildersMeasurement,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 5114!94bm"
+Warning,FormulaResolvedNotChecked,dimension_SSL_0010_1_KeelLengthForTonnage,"DM4: value chosen by the formula (rule F2), not yet checked against the page image: 90ft 01/ain"

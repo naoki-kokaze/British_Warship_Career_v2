@@ -1,0 +1,51 @@
+{
+  "ships": 71,
+  "events": 731,
+  "ships_with_events": 70,
+  "by_trigger": {
+    "EV03": 216,
+    "EV02": 91,
+    "EV04": 91,
+    "EV01": 64,
+    "EV14": 47,
+    "EV10": 30,
+    "EV06": 23,
+    "EV15": 23,
+    "EV19": 22,
+    "EV32": 18,
+    "EV09": 16,
+    "EV05": 12,
+    "EV21": 10,
+    "EV07": 10,
+    "EV11": 8,
+    "EV24": 7,
+    "EV12+EV10": 5,
+    "EV12": 5,
+    "EV11+EV07": 5,
+    "EV27": 5,
+    "EV28": 4,
+    "EV17": 3,
+    "EV20": 3,
+    "EV23": 2,
+    "EV08": 2,
+    "EV13": 2,
+    "EV12+EV12": 1,
+    "EV10+EV12": 1,
+    "EV18": 1,
+    "EV11+EV08": 1,
+    "EV22": 1,
+    "EV16": 1,
+    "EV31": 1
+  },
+  "by_status": {
+    "parsed": 690,
+    "needs_review": 41
+  },
+  "dated": 679,
+  "pending": {
+    "pending_B4": 3
+  },
+  "clauses_in_scope_without_event": 3,
+  "duplicate_ids_resolved": 1,
+  "role_judgements_loaded": 118
+}

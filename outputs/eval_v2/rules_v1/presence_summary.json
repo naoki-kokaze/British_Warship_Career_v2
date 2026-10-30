@@ -1,0 +1,33 @@
+{
+  "presences": 420,
+  "by_axis_status": {
+    "service:InCommission": 155,
+    "service:PaidOff": 89,
+    "work:UnderFitting": 48,
+    "service:InOrdinary": 35,
+    "service:InNonCombatDuty": 32,
+    "work:UnderRepair": 30,
+    "service:BeingBrokenUp": 23,
+    "work:UnderRepairAndFitting": 6,
+    "service:InOtherCustody": 2
+  },
+  "service_open_ended": 1,
+  "service_undated_begin": 16,
+  "ships_with_presence": 68,
+  "checks": {
+    "K3": 5,
+    "K2": 12
+  },
+  "end_events_moved_by_date": [
+    "AWC_9010_18890200_sale",
+    "SF5_9028_18391129_loss"
+  ],
+  "derived_B1r": [
+    "PSL_9001_18631110_presence_InCommission",
+    "SBS_9113_18220500_presence_InCommission"
+  ],
+  "review_notes": {
+    "F1": 24,
+    "F2": 2
+  }
+}

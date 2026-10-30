@@ -1,0 +1,4 @@
+role,mentions,ships,contexts,fitted_as_then,judgement (seagoing / harbour / either / not_a_role),note
+harbour tender/tug,,,,,harbour,Claude提案・ユーザー承認 2026-10-14（本評価のLLM の候補で見つかった役割。既存の判断に揃える。共有の判断表には入れず、LLMの候補の統合にだけ使う）：tender・tug がともに harbour
+harbour service,,,,,harbour,Claude提案・ユーザー承認 2026-10-14（本評価のLLM の候補で見つかった役割。既存の判断に揃える。共有の判断表には入れず、LLMの候補の統合にだけ使う）：harbour vessel が harbour
+coastguard,,,,,seagoing,Claude提案・ユーザー承認 2026-10-14（本評価のLLM の候補で見つかった役割。既存の判断に揃える。共有の判断表には入れず、LLMの候補の統合にだけ使う）：coastguard ship・coastguard watch vessel が seagoing（coastguard depot ship のみ harbour）

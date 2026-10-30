@@ -1,0 +1,8 @@
+scope,unit,source,count,pct_of_total,pct_of_marked
+all,records,rule_direct,6791,97.91,97.91
+all,records,rule_inferred,144,2.08,2.08
+all,records,llm,1,0.01,0.01
+all,triples,rule_direct,65280,88.99,97.93
+all,triples,rule_inferred,1365,1.86,2.05
+all,triples,llm,12,0.02,0.02
+all,triples,shared,6703,9.14,

@@ -1,0 +1,69 @@
+{
+ "all": {
+  "records": {
+   "rule_direct": 1837,
+   "rule_inferred": 69,
+   "llm": 10,
+   "total": 1916
+  },
+  "triples": {
+   "rule_direct": 17724,
+   "rule_inferred": 655,
+   "llm": 103,
+   "shared": 1927,
+   "total": 20409
+  },
+  "llm_trace": {
+   "llm_rows_merged": 14,
+   "event_nodes": 10,
+   "presence_only": 3,
+   "not_represented": 1,
+   "presences_started_by_llm_event": 4,
+   "presences_ended_by_llm_event": 5,
+   "detail": [
+    "状態の期間だけ：PSPV_9035_18530700_role_llm（(role) service:InNonCombatDuty）",
+    "状態の期間だけ：PSPV_9035_18700000_role_llm（(role) service:InNonCombatDuty）",
+    "RDF にない：SBS_9113_18380900_role_llm（(role) role_seagoing）",
+    "状態の期間だけ：SF5_9079_18120900_laid_up_llm_u1（(status) service:InOrdinary）",
+    "LLM の出来事から始まる期間：AIF_9007_18680000_presence_UnderFitting",
+    "LLM の出来事から始まる期間：SCS_9017_18150200_presence_UnderRepair",
+    "LLM の出来事から始まる期間：SL3_9001_17951000_presence_UnderRepair",
+    "LLM の出来事から始まる期間：SM_9052_18661000_presence_BeingBrokenUp",
+    "LLM の出来事で終わる期間：PSPV_9035_18511030_presence_PaidOff",
+    "LLM の出来事で終わる期間：SF5_9079_18120900_presence_InNonCombatDuty",
+    "LLM の出来事で終わる期間：SL4_9004_17950500_presence_InCommission",
+    "LLM の出来事で終わる期間：SM_9036_18520000_presence_InCommission",
+    "LLM の出来事で終わる期間：SM_9052_18561000_presence_InNonCombatDuty"
+   ]
+  }
+ },
+ "main30": {
+  "records": {
+   "rule_direct": 737,
+   "rule_inferred": 25,
+   "llm": 5,
+   "total": 767
+  },
+  "triples": {
+   "rule_direct": 7168,
+   "rule_inferred": 238,
+   "llm": 55,
+   "shared": 710,
+   "total": 8171
+  },
+  "llm_trace": {
+   "llm_rows_merged": 6,
+   "event_nodes": 5,
+   "presence_only": 0,
+   "not_represented": 1,
+   "presences_started_by_llm_event": 2,
+   "presences_ended_by_llm_event": 1,
+   "detail": [
+    "RDF にない：SBS_9113_18380900_role_llm（(role) role_seagoing）",
+    "LLM の出来事から始まる期間：AIF_9007_18680000_presence_UnderFitting",
+    "LLM の出来事から始まる期間：SL3_9001_17951000_presence_UnderRepair",
+    "LLM の出来事で終わる期間：SL4_9004_17950500_presence_InCommission"
+   ]
+  }
+ }
+}
